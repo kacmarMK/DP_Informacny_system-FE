@@ -1,0 +1,191 @@
+{
+  "views": {
+      "login_screen":{
+      "username": "Užívateľ",
+      "password": "Heslo",
+      "login": "Prihlásiť",
+      "email": "E-mailová adresa",
+      "register": "Registrovať",
+      "or": "Prihlásiť sa cez ",
+      "remember": "Zapamätať si prihlásenie",
+      "forgot_password": "Zabudnuté heslo?",
+      "google": "Google",
+      "no_account": "Nemáte ešte učeť?",
+      "signup": "Registrovať sa",
+      "login_top": "Prihlásenie",
+      "login_message": "Vitajte späť! Prihláste sa do svojho konta.",
+      "login_invalid": "Meno alebo heslo je nesprávne!"
+    },
+    "register_view": {
+      "already_have_account": "Už máte účet?",
+      "heading": "Registrovať nový účet",
+      "description": "Vytvorenie nového účtu Vám zaberie iba minutku"
+    },
+    "home_view" : {
+      "profile_settings": "Nastavenia Profilu",
+      "redirect": "Presmerovanie",
+      "favorite_modules": "Obľubené Moduly",
+      "favorite_teams": "Obľubené tímy",
+      "welcome_back": "Vitajte späť"
+    },
+    "profile_view": {
+      "personal": "Osobné údaje",
+      "change_password": "Zmena hesla",
+      "update_button": "Upraviť profil",
+      "breadcrumb" : {
+        "heading":"Užívateľský Profil",
+        "link": "Nastavenia"
+      },
+      "details_form": {
+        "name": "Meno",
+        "surname": "Priezvisko",
+        "email": "E-mail",
+        "phone": "Telefónne číslo",
+        "name_placeholder": "Zadajte meno",
+        "surname_placeholder": "Zadajte priezvisko",
+        "email_placeholder": "Zadajte email",
+        "phone_placeholder": "Zadajte telefónne číslo"
+      },
+      "password_form": {
+        "password": "Heslo",
+        "repeat_password": "Zopakujte heslo",
+        "password_placeholder": "Zadajte heslo",
+        "repeat_placeholder": "Zopakujte heslo",
+        "password_dont_match": "Heslá sa nezhodujú"
+      }
+    },
+    "company_view": {
+      "members": "Členovia",
+      "teams": "Tímy",
+      "general_info": "Základne informácie",
+      "email_adress": "Emailová adresa:",
+      "phone_number": "Telefonne číslo:",
+      "change_permissions": "Zmena privilégii",
+      "remove": "Odstrániť",
+      "breadcrumb_heading": "Firma",
+      "company_info_form_name": "Názov",
+      "change_company_info": "Zmeniť údaje firmy",
+      "manage_permission": "Spravovať privilégia",
+      "number_of_teams": "Počet tímov",
+      "number_of_members": "Počet členov",
+      "add_team": "Pridať tím",
+      "no_member_yet": "Nemá zatiaľ žiadných uživateľov",
+      "no_team_yet": "Nemá zatiaľ žiadne tímy",
+      "no_modules_yet": "Nemá zatiaľ žiadne moduly",
+      "edit_team": "Upraviť tím",
+      "choose_permision": "Zvoliť rolu",
+      "team_name" : "Názov tímu",
+      "description" : "Popis",
+      "modules": "Moduly"
+      
+      },
+    "modules_view": {
+      "heading": "Zoznam Modulov",
+      "link": "Moduly",
+      "add_module": "Pridať modul"
+    },
+    "permissions_view": {
+      "heading": "Spravovať Privilégia",
+      "company": "Firma",
+      "button": "Pridať Privilégia",
+      "permissions": "Privilégia",
+      "permission_list": {
+        "add_member_to_company": "Pridať nového člena do firmy",
+        "remove_member_from_company": "Vymazať člena z firmy",
+        "change_permission": "Zmena privilégii užívateľov ",
+        "add_team": "Vytvorenie tímu",
+        "remove_team": "Vymazanie tímu",
+        "add_module": "Pridať modul",
+        "remove_module": "Vymazať module",
+        "edit_module": "Upraviť modul",
+        "assert_module_to_team": "Priradiť modul do tímu",
+        "assert_user_to_team": "Priradiť užívatela do tímu"
+      },
+      "name": "Názov",
+      "edit_permission": "Upraviť Privilégia",
+      "delete_permission": "Zmazať Privilégia"
+    },
+    "teams_view": {
+      "heading": "Zoznam tímov",
+      "link": "Tímy",
+      "not_assigned": "Momentálne sa nenachádzate v žiadnom tíme",
+      "members": "Členovia",
+      "modules": "Moduly"
+    },
+    "team_view": {
+      "first_name": "Meno",
+      "surname": "Priezvisko",
+      "email": "E-mail",
+      "phone":"Telefónne číslo",
+      "name": "Názov",
+      "available_members": "Dostupný užívatelia",
+      "select_member": "Vybrať užívateľa",
+      "modals": {
+        "icon": "Ikonka",
+        "name": "Názov",
+        "endpoint": "API koncový bod"
+      }
+    },
+    "modul_view": {
+      "heading": "Zoznam Modulov",
+      "link": "Moduly",
+      "add_module": {
+        "name": "Názov",
+        "icon": "Ikona"
+      }
+    },
+    "generate_avatar_view": {
+       "accessories_type": "Doplnky",
+       "clothe_type": "Oblečenie",
+       "clothe_color": "Farba Oblečenia",
+       "eyebrow_type": "Obočie",
+       "eye_type": "Oči",
+       "facial_hair_color": "Farba brady",
+       "facial_hair_type": "Brada",
+       "skin_color": "Farba pleti",
+       "top_type": "Účes",
+       "top_color": "Farba pokryvky hlavy",
+       "mouth_type": "Výraz",
+       "hair_color": "Farba vlasov",
+       "graphic_type": "Dizajn trička"
+       
+    }
+  },
+  "main_content": {
+    "sidebar_menu": {
+      "overview": "Prehľad",
+      "modules": "Moduly",
+      "company": "Firma",
+      "teams": "Tímy",
+      "statistics": "Štatistiky"
+    },"tabs": {
+      "general": "Všeobecné",
+      "preparation": "Príprava",
+      "regeneration": "Regenerácia",
+      "measurement": "Meranie",
+      "calibration": "Kalibrácia",
+      "calculation": "Kalkulácia",
+      "samples": "Vzorky"
+    },
+    "top_menu": {
+      "profile": {
+        "logout": "Odhlásiť",
+        "settings": "Nastavenia"
+      }
+    },
+    "home_breadcrumb" : "Domov"
+  },
+  "buttons": {
+    "create_modul": "Vytvoriť nový modul",
+    "edit_modul": "Upraviť modul",
+    "remove_modul": "Odstraniť modul",
+    "remove": "Odstraniť",
+    "add_member": "Pridať užívateľa",
+    "add_component": "Pridať komponent",
+    "edit_mode": "Editačný mód",
+    "cancel": "Zrušiť",
+    "save": "Uložiť",
+    "add_modul": "Pridať modul",
+    "templates": "Témy"
+    }
+}

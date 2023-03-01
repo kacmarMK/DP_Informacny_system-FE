@@ -1,0 +1,189 @@
+{
+    "views": {
+      "login_screen": {
+        "username": "Nom d´utilisateur",
+        "password": "Mot de passe",
+        "login": "Connexion",
+        "email": "E-mail",
+        "register": "S´inscrire",
+        "or": "Se connecter avec",
+        "forgot_password": "Mot de passe oublié ?",
+        "remember": "Restez connecté",
+        "google": "Google",
+        "no_account": "Vous n´avez pas encore de compte ?",
+        "signup": "Creér un compte",
+        "login_top": "Connexion",
+        "login_message": "Content de vous revoir! Connectez-vous á votre compte.",
+        "login_invalid": "Le nom d´utilisateur ou le mot de passe est invalide!"
+      },
+      "register_view": {
+        "already_have_account": "Avez-vous déja un compte ?",
+        "heading": "Enregister un nouveau compte",
+        "description": "Creér votre compte. Cela ne prend qu´une minute."
+      },
+      "home_view": {
+        "profile_settings": "Paramétres de profil ",
+        "redirect": "Réorienter",
+        "favorite_modules": "Modules préférées",
+        "favorite_teams": "Équipes préférées",
+        "welcome_back": "Content de vous revoir"
+      },
+      "profile_view": {
+        "personal": "Détails personnels",
+        "change_password": "Modifier le mot de passe",
+        "update_button": "Mettre á jour le profil",
+        "breadcrumb": {
+          "heading": "Profil de l´utilisateur",
+          "link": "Paramétres"
+        },
+        "details_form": {
+          "name": "Prénom",
+          "surname": "Nom",
+          "email": "E-mail",
+          "phone": "Numéro de téléphone",
+          "name_placeholder": "Entrez le prénom ici",
+          "surname_placeholder": "Entrez le nom ici",
+          "email_placeholder": "Entrez email ici",
+          "phone_placeholder": "Entrez le numéro de téléphone"
+        },
+        "password_form": {
+          "password": "Mot de passe",
+          "repeat_password": "Répétez le mot de passe",
+          "password_placeholder": "Entrez le mot de passe",
+          "repeat_placeholder": "Répétez le mot de passe",
+          "password_dont_match": "Le mot de passe ne correspond pas"
+        }
+      },
+      "company_view": {
+        "members": "Membres",
+        "teams": "Équipes",
+        "breadcrumb_heading": "Entreprise",
+        "general_info": "Info général",
+        "email_adress": "Adresse email:",
+        "phone_number": "Numéro de téléphone:",
+        "change_permissions": "Modifier les autorisations",
+        "company_info_form_name": "Nom de l´entreprise",
+        "remove": "Supprimer",
+        "change_company_info": "Modifier les informations de l´entreprise",
+        "manage_permission": "Gérer l´autorisation",
+        "number_of_teams": "Nombre d´équipes",
+        "number_of_members": "Nombre de membres",
+        "add_team": "Ajouter une équipe",
+        "no_member_yet": "Aucun membre",
+        "no_team_yet": "Aucune équipe",
+        "no_modules_yet": "Aucuns modules",
+        "edit_team": "Editér l´équipe",
+        "choose_permision": "Choisir l´autorisation",
+        "team_name": "Nom d´équipe",
+        "description": "Description",
+        "modules": "Modules"
+      },
+      "modules_view": {
+        "heading": "Liste des modules",
+        "link": "Modules",
+        "add_module": "Ajouter un module"
+      },
+      "permissions_view": {
+        "heading": "Gérer les autorisations",
+        "button": "Ajouter l´autorisation",
+        "permissions": "Autorisations",
+        "company": "Entreprise",
+        "permission_list": {
+          "add_member_to_company": "Ajouter un nouveau membre á l´entreprise",
+          "remove_member_from_company": "Supprimer un membre de l´entreprise",
+          "change_permission": "Modifier les autorisation de l´utilisateur",
+          "add_team": "Créer une nouvelle équipe",
+          "remove_team": "Supprimer l´équipe de l´entreprise",
+          "add_module": "Ajouter un nouveau module",
+          "remove_module": "Supprimer le module",
+          "edit_module": "Modifier le module ",
+          "assert_module_to_team": "Affirmer le module á l´équipe",
+          "assert_user_to_team": "Affirmer l´utilisateur á l´équipe"
+        },
+        "name": "Nom",
+        "edit_permission": "Modifier les autorisations",
+        "delete_permission": "Éfacer les autorisations"
+      },
+      "teams_view": {
+        "heading": "Liste de l´équipe",
+        "link": "Équipes",
+        "not_assigned": "Vous n´etes pas encore assigné á une équipe",
+        "members": "Membres",
+        "modules": "Modules"
+      },
+      "team_view": {
+        "first_name": "Prénom",
+        "surname": "Nom",
+        "email": "E-mail",
+        "phone": "Numéro de téléphone",
+        "name": "Nom",
+        "available_members": "Membres Disponibles",
+        "select_member": "Choisissez un membre",
+        "modals": {
+          "icon": "Icone",
+          "name": "Nom",
+          "endpoint": "API pointfinal"
+        }
+      },
+      "module_view": {
+        "heading": "Liste des modules",
+        "link": "Modules",
+        "add_module": {
+          "name": "Nom",
+          "icon": "Icone"
+        }
+      },
+      "generate_avatar_view": {
+        "accessories_type": "Accessories",
+        "clothe_type": "Vetements",
+        "clothe_color": "Couleur des vetements",
+        "eyebrow_type": "Sourcil",
+        "eye_type": "Yeux",
+        "facial_hair_color": "Couleur des poils du visage",
+        "facial_hair_type": "Type de poils sur le visage",
+        "skin_color": "Couleur de la peau",
+        "top_type": "Type de t-shirt",
+        "top_color": "Couleur de t-shirt",
+        "mouth_type": "Type de bouche",
+        "hair_color": "Couleur de cheveaux",
+        "graphic_type": "Type de graphique"
+      }
+    },
+    "main_content": {
+      "sidebar_menu": {
+        "overview": "Résumé",
+        "modules": "Modules",
+        "company": "Entreprise",
+        "teams": "Équipes",
+        "statistics": "Statistiques"
+      },
+      "tabs": {
+        "general": "Generale",
+        "preparation": "Préparation",
+        "regeneration": "Régénération",
+        "measurement": "Mesure",
+        "calibration": "Calibrage",
+        "calculation": "Calcul",
+        "samples": "Échantillons"
+      },
+      "top_menu": {
+        "profile": {
+          "logout": "Se déconnecter",
+          "settings": "Réglages"
+        }
+      },
+      "home_breadcrumb": "Accueil"
+    },
+    "buttons": {
+      "create_modul": "Créer un nouveau module",
+      "edit_modul": "Modifier le module",
+      "remove_modul": "Supprimer le module",
+      "remove": "Supprimer",
+      "add_member": "Ajouter un membre",
+      "add_component": "Ajouter un composant",
+      "edit_mode": "Mode édition",
+      "cancel": "Annuler",
+      "save": "Sauvegarder",
+      "add_modul": "Ajouter un module"
+    }
+  }

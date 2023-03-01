@@ -1,0 +1,190 @@
+{
+  "views": {
+    "login_screen":{
+      "username": "Username",
+      "password": "Password",
+      "login": "Login",
+      "email": "E-mail",
+      "register": "Register",
+      "or": "Sign in with",
+      "forgot_password": "Forgot password?",
+      "remember": "Stay logged in",
+      "google": "Google",
+      "no_account": "Don't have an account yet?",
+      "signup": "Create account",
+      "login_top": "Login",
+      "login_message": "Welcome back! Log in to your account.",
+      "login_invalid": "Login or password is invalid!"
+    },
+    "register_view": {
+      "already_have_account": "Already have account?",
+      "heading": "Register new account",
+      "description": "Create your account. It only takes a minute"
+    },
+    "home_view" : {
+      "profile_settings": "Profile Settings",
+      "redirect": "Redirect",
+      "favorite_modules": "Favorite Modules",
+      "favorite_teams": "Favorite Teams",
+      "welcome_back": "Welcome Back"
+    },
+    "profile_view": {
+      "personal": "Personal Details",
+      "change_password": "Change Password",
+      "update_button": "Update Profile",
+      "breadcrumb" : {
+         "heading":"User Profile",
+         "link": "Settings"
+      },
+      "details_form": {
+        "name": "Name",
+        "surname": "Surname",
+        "email": "E-mail",
+        "phone": "Phone number",
+        "name_placeholder": "Enter name",
+        "surname_placeholder": "Enter surname",
+        "email_placeholder": "Enter email",
+        "phone_placeholder": "Enter phone number"
+      },
+      "password_form": {
+        "password": "Password",
+        "repeat_password": "Repeat Password",
+        "password_placeholder": "Enter password",
+        "repeat_placeholder": "Repeat password",
+        "password_dont_match": "Passwords do not match"
+      }
+    },
+    "company_view": {
+      "members": "Members",
+      "teams": "Teams",
+      "breadcrumb_heading": "Company",
+      "general_info": "General info",
+      "email_adress": "Email Adress:",
+      "phone_number": "Phone Number:",
+      "change_permissions": "Change Permissions",
+      "company_info_form_name": "Company name",
+      "remove": "Remove",
+      "change_company_info": "Change Company Info",
+      "manage_permission": "Manage Permissions",
+      "number_of_teams": "Number of teams",
+      "number_of_members": "Number of Members",
+      "add_team": "Add Team",
+      "no_member_yet": "No members yet",
+      "no_team_yet": "No teams yet",
+      "no_modules_yet": "No modules yet",
+      "edit_team": "Edit team",
+      "choose_permision": "Choose permision",
+      "team_name" : "Team name",
+      "description" : "Description",
+      "modules": "Modules"
+    },
+    "modules_view": {
+      "heading": "Modules List",
+      "link": "Modules",
+      "add_module": "Add module"
+    },
+    "permissions_view": {
+      "heading": "Manage Permisions",
+      "button": "Add Permission",
+      "permissions": "Permissions",
+      "company": "Company",
+      "permission_list": {
+        "add_member_to_company": "Add new member to company",
+        "remove_member_from_company": "Remove member from company",
+        "change_permission": "Change user's permission",
+        "add_team": "Create new team",
+        "remove_team": "Remove team from company",
+        "add_module": "Add new module",
+        "remove_module": "Remove module",
+        "edit_module": "Edit module",
+        "assert_module_to_team": "Assert module to team",
+        "assert_user_to_team": "Assert member to team"
+      },
+      "name": "Name",
+      "edit_permission": "Edit Permission",
+      "delete_permission": "Delete Permission"
+    },
+    "teams_view": {
+      "heading": "Teams List",
+      "link": "Teams",
+      "not_assigned": "You are not assigned into any team yet",
+      "members": "Members",
+      "modules": "Modules"
+    },
+    "team_view": {
+      "first_name": "First Name",
+      "surname": "Surname",
+      "email": "E-mail",
+      "phone":"Phone Number",
+      "name": "Name",
+      "available_members": "Available Members",
+      "select_member": "Select member",
+      "modals": {
+        "icon": "Icon",
+        "name": "Name",
+        "endpoint": "API Endpoint"
+      }
+    },
+    "module_view": {
+      "heading": "Modules List",
+      "link": "Modules",
+      "add_module": {
+        "name": "Name",
+        "icon": "Icon"
+      }
+    },
+    "generate_avatar_view": {
+      "accessories_type": "Accessories",
+      "clothe_type": "Clothes",
+      "clothe_color": "Clothes color",
+      "eyebrow_type": "Eyebrow",
+      "eye_type": "Eye",
+      "facial_hair_color": "Facial Hair Color",
+      "facial_hair_type": "Facial Hair Type",
+      "skin_color": "Skin color",
+      "top_type": "Top type",
+      "top_color": "Top color",
+      "mouth_type": "Mouth type",
+      "hair_color": "Hair color",
+      "graphic_type": "Graphic type"
+   }
+  },
+  "main_content": {
+    "sidebar_menu": {
+      "overview": "Overview",
+      "modules": "Modules",
+      "company": "Company",
+      "teams": "Teams",
+      "statistics": "Statistics"
+    },"tabs": {
+      "general": "General",
+      "preparation": "Preparation",
+      "regeneration": "Regeneration",
+      "measurement": "Measurement",
+      "calibration": "Calibration",
+      "calculation": "Calculation",
+      "samples": "Samples"
+    },
+    "top_menu": {
+      "profile": {
+        "logout": "Logout",
+        "settings": "Settings"
+      }
+    },
+    "home_breadcrumb" : "Home"
+  },
+  "buttons": {
+    "create_modul": "Create new module",
+    "edit_modul": "Edit module",
+    "remove_modul": "Remove module",
+    "remove": "Remove",
+    "add_member": "Add Member",
+    "add_component": "Add Component",
+    "edit_mode": "Edit Mode",
+    "cancel": "Cancel",
+    "save": "Save",
+    "add_modul": "Add module",
+    "templates": "Templates"
+  }
+
+}

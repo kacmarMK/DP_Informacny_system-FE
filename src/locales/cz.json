@@ -1,0 +1,183 @@
+{
+  "views": {
+      "login_screen":{
+      "username": "Uživatel",
+      "password": "Heslo",
+      "login": "Přihlásit",
+      "email": "E-mailová adresa",
+      "register": "Registrovat",
+      "or": "Přihlásit se přes ",
+      "remember": "Zapamatovat si přihlášení",
+      "forgot_password": "Zapomenuté heslo?",
+      "google": "Google",
+      "no_account": "Nemáte ještě učet?",
+      "signup": "Registrovat se",
+      "login_top": "Přihlášení",
+      "login_message": "Vítejte zpátky! Přihlaste se do svého účtu.",
+      "login_invalid": "Jméno nebo heslo je nesprávné!"
+    },
+    "register_view": {
+      "already_have_account": "Už máte účet?",
+      "heading": "Registrovat nový účet",
+      "description": "Vytvoření nového účtu Vám zabere jen minutku"
+    },
+    "home_view" : {
+      "profile_settings": "Nastavení Profilu",
+      "redirect": "Přesměrování",
+      "favorite_modules": "Oblíbené Moduly",
+      "favorite_teams": "Oblíbené týmy",
+      "welcome_back": "Vítejte spátky"
+    },
+    "profile_view": {
+      "personal": "Osobní údaje",
+      "change_password": "Změna hesla",
+      "update_button": "Upravit profil",
+      "breadcrumb" : {
+        "heading":"Uživatelský Profil",
+        "link": "Nastavení"
+      },
+      "details_form": {
+        "name": "Jméno",
+        "surname": "Příjmení",
+        "email": "E-mail",
+        "phone": "Telefonní číslo",
+        "name_placeholder": "Zadejte jméno",
+        "surname_placeholder": "Zadejte příjmení",
+        "email_placeholder": "Zadajte email",
+        "phone_placeholder": "Zadajte telefonní číslo"
+      },
+      "password_form": {
+        "password": "Heslo",
+        "repeat_password": "Zopakujte heslo",
+        "password_placeholder": "Zadejte heslo",
+        "repeat_placeholder": "Zopakujte heslo",
+        "password_dont_match": "Hesla se neshodují"
+      }
+    },
+    "company_view": {
+      "members": "Členové",
+      "teams": "Týmy",
+      "general_info": "Základní informace",
+      "email_adress": "Emailová adresa:",
+      "phone_number": "Telefonní číslo:",
+      "change_permissions": "Změna privilegii",
+      "remove": "Odstrániť",
+      "breadcrumb_heading": "Firma",
+      "company_info_form_name": "Název",
+      "change_company_info": "Změnit údaje firmy",
+      "manage_permission": "Spravovat privilegia",
+      "number_of_teams": "Počet týmů",
+      "number_of_members": "Počet členů",
+      "add_team": "Přidat tým",
+      "no_member_yet": "Nemá zatím žádné uživatele",
+      "no_team_yet": "Nemá zatím žádné týmy",
+      "no_modules_yet": "Nemá zatím žádné moduly",
+      "edit_team": "Upravit tým",
+      "choose_permision": "Zvolit roli",
+      "team_name" : "Název týmu",
+      "description" : "Popis",
+      "modules": "Moduly"
+      
+      },
+    "modules_view": {
+      "heading": "Seznam Modulů",
+      "link": "Moduly",
+      "add_module": "Přidat modul"
+    },
+    "permissions_view": {
+      "heading": "Spravovat privilegia",
+      "company": "Firma",
+      "button": "Přidat privilegia",
+      "permissions": "Privilegia",
+      "permission_list": {
+        "add_member_to_company": "Přidat nového člena do firmy",
+        "remove_member_from_company": "Vymazat člena z firmy",
+        "change_permission": "Změna privilegia uživatelů",
+        "add_team": "Vytvoření týmu",
+        "remove_team": "Vymazání týmu",
+        "add_module": "Přidat modul",
+        "remove_module": "Vymazat module",
+        "edit_module": "Upravit modul",
+        "assert_module_to_team": "Přiřadit modul do týmu",
+        "assert_user_to_team": "Přiřadit uživatele do týmu"
+      },
+      "name": "Název",
+      "edit_permission": "Upravit Privilegie",
+      "delete_permission": "Smazat privilegia"
+    },
+    "teams_view": {
+      "heading": "Seznam týmů",
+      "link": "Týmy",
+      "not_assigned": "Momentálně se nenacházíte v žádném týmu",
+      "members": "Členové",
+      "modules": "Moduly"
+    },
+    "team_view": {
+      "first_name": "Jméno",
+      "surname": "Příjmení",
+      "email": "E-mail",
+      "phone":"Telefonní číslo",
+      "name": "Název",
+      "available_members": "Dostupní uživatelé",
+      "select_member": "Vybrat uživatele",
+      "modals": {
+        "icon": "Ikonka",
+        "name": "Název",
+        "endpoint": "API koncový bod"
+      }
+    },
+    "modul_view": {
+      "heading": "Seznam Modulov",
+      "link": "Moduly",
+      "add_module": {
+        "name": "Název",
+        "icon": "Ikona"
+      }
+    },
+    "generate_avatar_view": {
+       "accessories_type": "Doplňky",
+       "clothe_type": "Oblečení",
+       "clothe_color": "Barva Oblečení",
+       "eyebrow_type": "Obočí",
+       "eye_type": "Oči",
+       "facial_hair_color": "Barva brady",
+       "facial_hair_type": "Brada",
+       "skin_color": "Barva pleti",
+       "top_type": "Účes",
+       "top_color": "Barva pokryvky hlavy",
+       "mouth_type": "Výraz",
+       "hair_color": "Barva vlasu",
+       "graphic_type": "Dizajn trička"
+       
+    }
+  },
+  "main_content": {
+    "sidebar_menu": {
+      "overview": "Přehled",
+      "modules": "Moduly",
+      "company": "Firma",
+      "teams": "Týmy",
+      "statistics": "Statistiky"
+    },
+    "top_menu": {
+      "profile": {
+        "logout": "Odhlásit",
+        "settings": "Nastavení"
+      }
+    },
+    "home_breadcrumb" : "Domov"
+  },
+  "buttons": {
+    "create_modul": "Vytvořit nový modul",
+    "edit_modul": "Upravit modul",
+    "remove_modul": "Odstranit modul",
+    "remove": "Odstranit",
+    "add_member": "Přidat uživatele",
+    "add_component": "Přidat komponent",
+    "edit_mode": "Editační mód",
+    "cancel": "Zrušit",
+    "save": "Uložit",
+    "add_modul": "Přidat modul",
+    "templates": "Témata"
+    }
+}
