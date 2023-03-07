@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/dp-app/',
+  publicPath: '',
   configureWebpack: {
     resolve: {
       alias: {
