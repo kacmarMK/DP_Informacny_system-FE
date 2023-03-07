@@ -1,4 +1,4 @@
-# modulo-platform
+# BP-DP_Informacny_system-FE
 
 ## Project setup
 ```
@@ -22,4 +22,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# BP-DP_Informacny_system-FE
+
