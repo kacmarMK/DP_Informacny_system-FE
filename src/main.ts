@@ -11,7 +11,7 @@ import PieChart from "./components/Charts/PieChart.vue";
 import AreaChart from "./components/Charts/AreaChart.vue";
 import SetupedValue from "./components/DashboardComponents/SetupedValue.vue"
 import VueApexCharts from 'vue3-apexcharts'
-import setGoogleApi from './google.js'
+//import setGoogleApi from './google.js'
 
 
 const app = createApp(App);
@@ -24,6 +24,6 @@ app.component('BarChart', BarChart)
 app.component('PieChart', PieChart)
 app.component('AreaChart', AreaChart)
 app.component('SetupedValue', SetupedValue)
-app.use(VueApexCharts)
-setGoogleApi(app)
+//app.use(VueApexCharts)
+//setGoogleApi(app)
 app.mount('#app')

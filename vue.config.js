@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '',
+  publicPath: '',       // /dp-app/
   configureWebpack: {
     resolve: {
       alias: {
@@ -19,6 +19,11 @@ module.exports = {
     }
   },
   devServer: {
-    proxy: 'http://localhost:8081'
+    proxy: {
+      '^/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      },
+    }
   }
 }

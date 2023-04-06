@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 const token = sessionStorage.getItem('jwt')
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "/dp-app/api/",
+  baseURL: "/api/",
   withCredentials: true,
   headers: {
     "Access-Control-Allow-Origin": "*",

@@ -18,7 +18,7 @@
                                         <label for="username" class="fw-bolder">{{$t('views.login_screen.username')}}</label>
                                         <div class="input-group mt-2">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                            <input type="text" v-model="user.nickName" class="form-control" id="username" :placeholder="$t('views.login_screen.username')" required/>
+                                            <input type="text" v-model="user.name" class="form-control" id="username" :placeholder="$t('views.login_screen.username')" required/>
                                         </div>
                                     </div>
 

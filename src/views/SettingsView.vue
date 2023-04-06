@@ -141,8 +141,8 @@ export default defineComponent({
 	}
 
     this.old_password = user.password == undefined ? "" : user.password;
-    let company = user.company != undefined ? user.company : "";
-
+    //let company = user.company != undefined ? user.company : "";
+/*
     if (company != "") {
       CompanyService.getCompany(company)
         .then((response: ResponseData<Company>) => {
@@ -151,7 +151,7 @@ export default defineComponent({
         .catch((error) => {
           console.log(error);
         });
-    }
+    }*/
   },
   methods: {
     submit() {

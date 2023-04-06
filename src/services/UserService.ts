@@ -3,7 +3,7 @@ import http from "@/http-common"
 class UserService {
 
     login(user: User): Promise<any> {
-        return http.get('user/getUserByNickNameAndPassword?nickName=' + user.nickName + '&password=' + user.password);
+        return http.get('user/getUserByNickNameAndPassword?nickName=' + user.name + '&password=' + user.password);
     }
 
     getUser(id: string): Promise<any> {
@@ -15,7 +15,7 @@ class UserService {
     }
 
     addUser(user: User): Promise<any> {
-        return http.post('user/addUser', user)
+        return http.post('user/create', user)
     }
 
     googleLogin(email: string){

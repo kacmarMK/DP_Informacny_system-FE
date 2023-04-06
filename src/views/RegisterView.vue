@@ -13,26 +13,6 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group mb-3">
-                                        <label for="username" class="fw-bolder">{{$t('views.login_screen.username')}}</label>
-                                        <div class="input-group mt-2">
-                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                            <input type="text" :placeholder="$t('views.login_screen.username')"  id="username" class="form-control" v-model="user.nickName" required autocomplete="off" autofill="off"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group mb-3">
-                                        <label for="email" class="fw-bolder">{{$t('views.profile_view.details_form.email')}}</label>
-                                        <div class="input-group mt-2">
-                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                            <input type="email" :placeholder="$t('views.profile_view.details_form.email')"  id="email" class="form-control" v-model="user.email" required/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group mb-3">
                                         <label for="name" class="fw-bolder">{{$t('views.profile_view.details_form.name')}}</label>
                                         <div class="input-group mt-2">
                                             <span class="input-group-text"><i class="fas fa-address-card"></i></span>
@@ -40,12 +20,34 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--
                                 <div class="col-6">
                                     <div class="form-group mb-3">
                                         <label for="surname" class="fw-bolder">{{$t('views.profile_view.details_form.surname')}}</label>
                                         <div class="input-group mt-2">
                                             <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                                             <input type="text" :placeholder="$t('views.profile_view.details_form.surname')"  id="surname" class="form-control" v-model="user.surname" />
+                                        </div>
+                                    </div>
+                                </div>-->
+                            </div>
+                            <div class="row">
+                                <!--
+                                <div class="col-6">
+                                    <div class="form-group mb-3">
+                                        <label for="username" class="fw-bolder">{{$t('views.login_screen.username')}}</label>
+                                        <div class="input-group mt-2">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            <input type="text" :placeholder="$t('views.login_screen.username')"  id="username" class="form-control" v-model="user.nickName" required autocomplete="off" autofill="off"/>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="col-6">
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="fw-bolder">{{$t('views.profile_view.details_form.email')}}</label>
+                                        <div class="input-group mt-2">
+                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                            <input type="email" :placeholder="$t('views.profile_view.details_form.email')"  id="email" class="form-control" v-model="user.mail" required/>
                                         </div>
                                     </div>
                                 </div>
@@ -97,16 +99,24 @@ import ResponseData from "@/services/ResponseData";
 import UserService from "@/services/UserService";
 import { defineComponent} from "@vue/runtime-core";
 import LanguageSwitcher from '../components/LanguageSwitcher.vue';
+import { MD5 } from 'crypto-js';
+
 
 export default defineComponent ({
     components: {    
         LanguageSwitcher 
     },
+    computed: {
+        hashedInput() {
+            return MD5(this.repeat).toString();
+    },
+  },
     data: () => ({
         user: {} as User,
         repeat: '' as string,
         passwordIncorrect: false as boolean
     }),
+    
     methods: {
         submit(){
             if(this.repeat === this.user.password){
@@ -127,6 +137,7 @@ export default defineComponent ({
                     graphicType:"Cumbia",
                 }
                 this.user.avatar = JSON.stringify(json)
+                this.user.password = this.hashedInput;
                 UserService.addUser(this.user).then( (response: ResponseData<User>) => {
                     sessionStorage.setItem('user', JSON.stringify(response.data))
                     sessionStorage.setItem('jwt', 'true')

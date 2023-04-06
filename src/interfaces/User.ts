@@ -4,13 +4,13 @@ import Permission from "./Permission";
 interface User {
     id?: string;
     avatar?: string
-    nickName?: string;
+    //nickName?: string;
     password?: string;
     company?: string;
-    email?: string;
+    mail?: string;
     name?: string;
-    surname?: string;
-    phoneNumber?: string; 
+    //surname?: string;
+    //phoneNumber?: string; 
     permissionEntity?: Permission;
     favoriteEntityList?: Array<Favorite>;
 }
