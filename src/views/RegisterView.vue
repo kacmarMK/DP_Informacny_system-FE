@@ -79,11 +79,11 @@
                              <input type="submit" :value="$t('views.login_screen.register')" class="btn btn-primary-blue d-flex justify-content-center w-50" />
                             </div>
                         </form>
-                        <div class="mt-4 text-center"> 
-                            <span class="me-2">{{$t('views.register_view.already_have_account')}}</span><router-link :to="{path: 'login'}" class="text-decoration-none">{{$t('views.login_screen.login')}}</router-link>
+                        <div class="mt-3 text-center"> 
+                            <h6><span class="me-2">{{$t('views.register_view.already_have_account')}}</span><router-link :to="{path: 'login'}" class="text-decoration-none">{{$t('views.login_screen.login')}}</router-link></h6>
                          </div>
                     </div>
-                    <div class="d-flex justify-content-center mt-2 mb-4">
+                    <div class="d-flex justify-content-center mb-4">
                         <LanguageSwitcher/>
                     </div>
                 </div>
@@ -99,7 +99,6 @@ import ResponseData from "@/services/ResponseData";
 import UserService from "@/services/UserService";
 import { defineComponent} from "@vue/runtime-core";
 import LanguageSwitcher from '../components/LanguageSwitcher.vue';
-import { MD5 } from 'crypto-js';
 
 
 export default defineComponent ({
@@ -107,9 +106,6 @@ export default defineComponent ({
         LanguageSwitcher 
     },
     computed: {
-        hashedInput() {
-            return MD5(this.repeat).toString();
-    },
   },
     data: () => ({
         user: {} as User,
@@ -117,6 +113,8 @@ export default defineComponent ({
         passwordIncorrect: false as boolean
     }),
     
+
+
     methods: {
         submit(){
             if(this.repeat === this.user.password){
@@ -137,7 +135,6 @@ export default defineComponent ({
                     graphicType:"Cumbia",
                 }
                 this.user.avatar = JSON.stringify(json)
-                this.user.password = this.hashedInput;
                 UserService.addUser(this.user).then( (response: ResponseData<User>) => {
                     sessionStorage.setItem('user', JSON.stringify(response.data))
                     sessionStorage.setItem('jwt', 'true')
@@ -155,5 +152,8 @@ export default defineComponent ({
 <style scoped>
     .card-header {
         border: 0;
+    }
+    #register {
+        background: linear-gradient(180deg, #162447 0%, #0d1b2a 100%);
     }
 </style>

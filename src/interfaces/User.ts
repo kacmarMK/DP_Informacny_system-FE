@@ -1,3 +1,4 @@
+import Company from "./Company";
 import Favorite from "./Favorite";
 import Permission from "./Permission";
 
@@ -6,13 +7,24 @@ interface User {
     avatar?: string
     //nickName?: string;
     password?: string;
-    company?: string;
     mail?: string;
     name?: string;
+    company?: Company,
     //surname?: string;
-    //phoneNumber?: string; 
     permissionEntity?: Permission;
     favoriteEntityList?: Array<Favorite>;
+    /* TODO: TAKTO BUDE VYZERAT FINALNY USER 
+    id?: string;
+    username?: string;
+    password?: string;
+    salt: string;
+    mail?: string;
+    name?: string;
+    surname?: string;
+    permissionEntity?: Permission;
+    ? favoriteEntityList?: Array<Favorite>; ?
+    ? avatar?: string ?
+    */
 }
 
 export default User;

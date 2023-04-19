@@ -2,7 +2,7 @@
 <div id="login">
     <div class="container-fluid">
         <div class="row g-0">
-            <div class="col-xl-6 p-0 order-lg-0 order-1">
+            <div class="p-0 order-lg-0 order-1">
                                         
                   <div class="login-card">
 
@@ -56,9 +56,7 @@
                         </div>
                     </div>
             </div>
-            <div class="col-xl-6 order-lg-1 order-0 d-none d-lg-block" >
-               <img src="../assets/images/modulo.png" class="img-responsive" style="background-size: cover;background-position: center center;"/> 
-            </div>
+
         </div>
     </div>
 </div>
@@ -182,6 +180,9 @@ export default defineComponent ({
     color: rgb(153, 153, 153);
   }
 
+  #login {
+    background: linear-gradient(180deg, #162447 0%, #0d1b2a 100%);
+  }
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 

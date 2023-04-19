@@ -14,7 +14,6 @@ export default {
 
     .loading-bg {
         display: flex;
-        height: 100vh;
         background: rgba(255,255,255, 0.1);
         justify-content: center;
         align-items: center;
