@@ -3,10 +3,9 @@
     <div id="sidebar">
         <ul class="navbar-nav sidebar sidebar-dark mt-3">
             <NavLink icon="fas fa-tachometer-alt" :label="$t('main_content.sidebar_menu.overview')" path="/home" />
-            <NavLink icon="fas fa-fw fa-microchip" :label="$t('main_content.sidebar_menu.modules')"  v-if="!hidden" path="/modules" />
-            <!-- <NavLink icon="fas fa-chart-bar" :label="$t('main_content.sidebar_menu.statistics')"  v-if="!hidden" path="/statistics" /> -->
-            <NavLink icon="fas fa-users" :label="$t('main_content.sidebar_menu.teams')"  v-if="!hidden" path="/teams" />
-            <NavLink icon="fas fa-building" :label="$t('main_content.sidebar_menu.company')" path="/company" />
+            <NavLink icon="fas fa-fw fa-microchip" :label="$t('main_content.sidebar_menu.modules')"  path="/modules" />
+            <NavLink icon="fas fa-users" :label="$t('main_content.sidebar_menu.teams')"  path="/teams" />
+            <!--<NavLink icon="fas fa-building" :label="$t('main_content.sidebar_menu.company')" path="/company" />-->
         </ul>
         </div>
     </div>
@@ -22,24 +21,7 @@ export default defineComponent({
     components: {NavLink},
     data: () => ({
         hidden: true as boolean
-    }),
-    created(){
-        let hidden = store.state.hidden
-        if(hidden == null || hidden == true){
-          
-            let user: User = Object.assign({}, JSON.parse(sessionStorage.getItem('user') || '{}'));
-            if(user.id != undefined){
-                CompanyService.getCompanyIdByUserId(user.id).then( () => {
-                    this.hidden = false;
-                    store.commit("setHidden", false);
-                }).catch( () => {
-                    this.hidden = true;
-                })
-            }
-        } else {
-            this.hidden = hidden
-        }
-    }
+    })
 })
 </script>
 

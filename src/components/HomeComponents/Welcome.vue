@@ -2,7 +2,7 @@
 
     <div class="card profile-greeting">
         <div class="text-center p-t-0">
-            <h3 class="font-light">{{$t('views.home_view.welcome_back')}}, {{user.name}} {{user.surname}}</h3>
+            <h3 class="font-light">{{$t('views.home_view.welcome_back')}}, {{user.name}}</h3>
         </div>
     </div>
 

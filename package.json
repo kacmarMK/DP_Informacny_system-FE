@@ -9,12 +9,14 @@
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
     "ag-grid-community": "^27.2.1",
     "ag-grid-vue": "^27.2.1",
     "ag-grid-vue3": "^27.2.1",
     "apexcharts": "^3.33.0",
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
+    "boostrap": "^2.0.0",
     "core-js": "^3.6.5",
     "crypto-js": "^4.1.1",
     "v-runtime-template": "^1.10.0",

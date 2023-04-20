@@ -1,34 +1,34 @@
 <template>
-    <div class="dropdown">
-        <a id="mainlang" class="nav-link dropdown-toggle arrow-none" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
+    <div className="dropdown">
+        <a id="mainlang" className="nav-link dropdown-toggle arrow-none" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
            <country-flag :country='selectedLang.flag' size='small'/>
-           <span class="d-none d-sm-inline-block ms-2">{{selectedLang.name}}</span>
-           <i class="fas fa-chevron-down fa-sm ms-2"></i>
+           <span className="d-none d-sm-inline-block ms-2">{{selectedLang.name}}</span>
+           <i className="fas fa-chevron-down fa-sm ms-2"></i>
         </a>
 
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+        <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
             <li>
-                <a class="dropdown-item" href="#" @click="handleLanguage('us', 'English')">
+                <a className="dropdown-item" href="#" @click="handleLanguage('us', 'English')">
                     <country-flag country='us' size='small'/>
-                    <span class="ms-2">English</span>
+                    <span className="ms-2">English</span>
                 </a>
            </li>
             <li>
-                <a class="dropdown-item" href="#" @click="handleLanguage('sk', 'Slovenčina')">
+                <a className="dropdown-item" href="#" @click="handleLanguage('sk', 'Slovenčina')">
                     <country-flag country='sk' size='small'/>
-                    <span class="ms-2">Slovenčina</span>
+                    <span className="ms-2">Slovenčina</span>
                 </a>
            </li>
             <li>
-                <a class="dropdown-item" href="#" @click="handleLanguage('cz', 'Čeština')">
+                <a className="dropdown-item" href="#" @click="handleLanguage('cz', 'Čeština')">
                     <country-flag country='cz' size='small'/>
-                    <span class="ms-2">Čeština</span>
+                    <span className="ms-2">Čeština</span>
                 </a>
            </li>
             <li>
-                <a class="dropdown-item" href="#" @click="handleLanguage('fr', 'Français')">
+                <a className="dropdown-item" href="#" @click="handleLanguage('fr', 'Français')">
                     <country-flag country='fr' size='small'/>
-                    <span class="ms-2">Français</span>
+                    <span className="ms-2">Français</span>
                 </a>
            </li>
         </ul>
