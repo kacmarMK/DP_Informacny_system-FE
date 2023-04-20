@@ -23,11 +23,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/DashboardView.vue')
   },
   {
-    path: '/modules',
-    name: 'modules',
-    component: () => import(/* webpackChunkName: "modules" */ '../views/ModulesView.vue'),
-  },
-  {
     path: '/modules/:id',
     name: 'module',
     component: () => import(/* webpackChunkName: "module" */ '../views/ModulView.vue'),
@@ -47,6 +42,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/teams',
     name: 'teams',
     component: () => import(/* webpackChunkName: "teams" */ '../views/TeamsView.vue')
+  },
+  {
+    path: '/notifications',
+    name: 'notifications',
+    component: () => import(/* webpackChunkName: "notifications" */ '../views/NotificationsView.vue')
+  },
+  {
+    path: '/jobs',
+    name: 'jobs',
+    component: () => import(/* webpackChunkName: "jobs" */ '../views/JobsView.vue')
   },
   {
     path: '/teams/:id',

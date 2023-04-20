@@ -157,7 +157,9 @@
       "modules": "Moduly",
       "company": "Firma",
       "teams": "Týmy",
-      "statistics": "Statistiky"
+      "statistics": "Statistiky",
+      "notifications": "Upozornění",
+      "jobs": "Joby"
     },
     "top_menu": {
       "profile": {

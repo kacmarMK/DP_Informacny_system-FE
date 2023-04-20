@@ -115,8 +115,6 @@ import User from "../interfaces/User";
 import UserService from "../services/UserService";
 import Breadcrumb from "../components/Breadcrumb.vue";
 import ResponseData from "@/services/ResponseData";
-import CompanyService from "@/services/CompanyService";
-import Company from "@/interfaces/Company";
 import Avataaars from 'vuejs-avataaars/src/Avataaars.vue'
 import Avatar from "@/interfaces/Avatar";
 
@@ -129,7 +127,6 @@ export default defineComponent({
     repeat: "" as string,
     old_password: "" as string,
     password_err: false as boolean,
-    company: {} as Company,
 	avatar: {} as Avatar
   }),
   created() {

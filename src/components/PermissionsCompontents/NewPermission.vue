@@ -66,7 +66,6 @@
     </form>
 </template>
 <script lang="ts">
-import Company from "@/interfaces/Company";
 import Permission from "@/interfaces/Permission";
 import { defineComponent } from "@vue/runtime-core";
 
@@ -75,8 +74,7 @@ export default defineComponent({
     props: ['title'],
     emits: ['changePerm'],
     data: () => ({
-        newPermission: {} as Permission,
-        company: {} as Company
+        newPermission: {} as Permission
     }),
     methods: {
         submitData(){

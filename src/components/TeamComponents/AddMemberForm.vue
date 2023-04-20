@@ -7,7 +7,7 @@
                         <select class="w-50 form-select mt-2">
                             <option value="">{{$t('views.team_view.select_member')}}</option>
                             <option v-for="(item, index) in available" :key="index" :value="item.id">
-                                {{item.name}} {{item.surname}}
+                                {{item.name}}
                             </option>
                         </select>
                     </div>
@@ -20,8 +20,6 @@
 
 </template>
 <script lang="ts">
-import Company from '@/interfaces/Company'
-import CompanyService from '@/services/CompanyService'
 import ResponseData from '@/services/ResponseData'
 import { defineComponent } from '@vue/runtime-core'
 import User from '../../interfaces/User'
@@ -35,19 +33,6 @@ export default defineComponent({
         selectedUser: {} as User
     }),
     components: {ModalBasicWindow},
-    created(){
-        let user: User = Object.assign({}, JSON.parse(sessionStorage.getItem('user') || '{}'));
-        if(user.id != null && user.id != undefined) {
-            CompanyService.getCompanyIdByUserId(user.id).then( (response: ResponseData<Company>) => {
-                
-                if(response.data.userEntityList)
-                    this.listOfAvailableUsers(response.data.userEntityList)
-            }).catch( (err) => {
-                console.log(err)
-            })
-        }
-
-    },
     methods: {
         selected(id: string){
            let user = this.available.filter( u => u.id == id);

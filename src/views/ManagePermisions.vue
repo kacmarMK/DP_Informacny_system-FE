@@ -72,15 +72,12 @@ import AlertError from '../components/AlertError.vue'
 import PermissionList from '../components/PermissionsCompontents/PermissionList.vue'
 import NewPermission from '../components/PermissionsCompontents/NewPermission.vue'
 import ModalBasicWindow from '../components/modals/ModalBasicWindow.vue'
-import CompanyService from "@/services/CompanyService";
-import Company from "@/interfaces/Company";
 import Spinner from '@/components/Spinner.vue';
 
 export default defineComponent({
     name: 'ManagePermisions',
     props: ['id'],
     data: () => ({
-      company: {} as Company,
       error: false as boolean,
       loading: true as boolean,
       newPermission: {} as Permission
@@ -90,16 +87,16 @@ export default defineComponent({
         ModalBasicWindow,Spinner,NewPermission
     },
     created(){
-
+    /*
       CompanyService.getCompany(this.id).then( (response: ResponseData<Company>) => {
             this.company = response.data
             this.loading = false
         }).catch( (error) => {
           console.log(error)
           this.loading = false
-      })
+      })*/
     },
-    methods: {
+    methods: {/*
       isNotEmpty(){
         if(this.company.permissionEntityList)
           return Object.keys(this.company.permissionEntityList).length > 0;
@@ -131,7 +128,7 @@ export default defineComponent({
             this.company.permissionEntityList = this.company.permissionEntityList.filter( p => p.id != id)
             this.updateCompany();
          }
-      }
+      }*/
     }
 })
 </script>

@@ -32,8 +32,6 @@ import MainContent from '../components/MainContent.vue'
 import Welcome from '../components/HomeComponents/Welcome.vue'; 
 //import YourCompany from '../components/HomeComponents/YourCompany.vue'; 
 import User from '@/interfaces/User';
-import CompanyService from '@/services/CompanyService';
-import Company from '@/interfaces/Company';
 import ResponseData from '@/services/ResponseData';
 import Team from '@/interfaces/Team';
 import Module from '@/interfaces/Module';
@@ -52,7 +50,6 @@ export default defineComponent({
   },
   data: () => ({
      hidden: true as boolean,
-     company: {} as Company,
      modules: new Array<Module>(),
      teams: new Array<Team>(),
      userId: '' as string,    

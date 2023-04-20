@@ -157,7 +157,9 @@
       "modules": "Moduly",
       "company": "Firma",
       "teams": "Tímy",
-      "statistics": "Štatistiky"
+      "statistics": "Štatistiky",
+      "notifications": "Notifikácie",
+      "jobs": "Joby"
     },"tabs": {
       "general": "Všeobecné",
       "preparation": "Príprava",

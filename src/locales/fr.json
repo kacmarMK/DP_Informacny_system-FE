@@ -155,7 +155,9 @@
         "modules": "Modules",
         "company": "Entreprise",
         "teams": "Équipes",
-        "statistics": "Statistiques"
+        "statistics": "Statistiques",
+        "notifications": "Notifications",
+        "jobs": "Emplois"
       },
       "tabs": {
         "general": "Generale",
