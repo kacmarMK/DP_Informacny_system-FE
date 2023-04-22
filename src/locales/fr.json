@@ -83,6 +83,14 @@
         "link": "Modules",
         "add_module": "Ajouter un module"
       },
+      "notifications_view": {
+        "heading":"Notifications",
+        "link": "Notifications"
+      },
+      "jobs_view": {
+        "heading":"Emplois",
+        "link": "Emplois"
+      },
       "permissions_view": {
         "heading": "Gérer les autorisations",
         "button": "Ajouter l´autorisation",

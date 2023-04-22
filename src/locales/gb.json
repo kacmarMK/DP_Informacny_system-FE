@@ -104,6 +104,14 @@
       "edit_permission": "Edit Permission",
       "delete_permission": "Delete Permission"
     },
+    "notifications_view": {
+      "heading":"Notifications",
+      "link": "Notifications"
+    },
+    "jobs_view": {
+      "heading":"Jobs",
+      "link": "Jobs"
+    },
     "teams_view": {
       "heading": "Teams List",
       "link": "Teams",

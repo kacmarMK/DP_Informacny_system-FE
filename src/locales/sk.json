@@ -126,6 +126,14 @@
         "endpoint": "API koncový bod"
       }
     },
+    "notifications_view": {
+      "heading":"Notifikácie",
+      "link": "Notifikácie"
+    },
+    "jobs_view": {
+      "heading":"Joby",
+      "link": "Joby"
+    },
     "modul_view": {
       "heading": "Zoznam Modulov",
       "link": "Moduly",

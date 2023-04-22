@@ -8,8 +8,8 @@
 
         <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
             <li>
-                <a className="dropdown-item" href="#" @click="handleLanguage('us', 'English')">
-                    <country-flag country='us' size='small'/>
+                <a className="dropdown-item" href="#" @click="handleLanguage('gb', 'English')">
+                    <country-flag country='gb' size='small'/>
                     <span className="ms-2">English</span>
                 </a>
            </li>
@@ -45,9 +45,9 @@ export default defineComponent({
     },
     data() { 
         return { 
-            lang: localStorage.getItem("language") || "en",
+            lang: localStorage.getItem("language") || "gb",
             selectedLang: { 
-                flag: localStorage.getItem("language") || "us", 
+                flag: localStorage.getItem("language") || "gb", 
                 name: localStorage.getItem("languageName") || "English"
             }
         }

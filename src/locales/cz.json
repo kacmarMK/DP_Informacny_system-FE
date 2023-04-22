@@ -36,6 +36,7 @@
         "heading":"Uživatelský Profil",
         "link": "Nastavení"
       },
+
       "details_form": {
         "name": "Jméno",
         "surname": "Příjmení",
@@ -133,6 +134,14 @@
         "name": "Název",
         "icon": "Ikona"
       }
+    },
+    "notifications_view": {
+      "heading":"Notifikace",
+      "link": "Notifikace"
+    },
+    "jobs_view": {
+      "heading":"Joby",
+      "link": "Joby"
     },
     "generate_avatar_view": {
        "accessories_type": "Doplňky",

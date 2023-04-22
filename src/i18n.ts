@@ -22,7 +22,7 @@ function loadLocaleMessages(): LocaleMessages<VueMessageType> {
 export default createI18n({
   legacy: false,
   globalInjection: true,
-  locale: localStorage.getItem('language') || 'us',
-  fallbackLocale: localStorage.getItem('language') || 'us',
+  locale: localStorage.getItem('language') || 'gb',
+  fallbackLocale: localStorage.getItem('language') || 'gb',
   messages: loadLocaleMessages()
 })

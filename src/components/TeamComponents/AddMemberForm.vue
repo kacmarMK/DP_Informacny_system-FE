@@ -6,7 +6,7 @@
                         <label for="email" class="fw-bolder">{{$t('views.team_view.available_members')}}</label>
                         <select class="w-50 form-select mt-2">
                             <option value="">{{$t('views.team_view.select_member')}}</option>
-                            <option v-for="(item, index) in available" :key="index" :value="item.id">
+                            <option v-for="(item, index) in available" :key="index" :value="item.uid">
                                 {{item.name}}
                             </option>
                         </select>
@@ -35,7 +35,7 @@ export default defineComponent({
     components: {ModalBasicWindow},
     methods: {
         selected(id: string){
-           let user = this.available.filter( u => u.id == id);
+           let user = this.available.filter( u => u.uid == id);
            this.selectedUser = user[0]
         },
         submitData(){

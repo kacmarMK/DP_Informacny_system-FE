@@ -1,15 +1,13 @@
-import Company from "./Company";
 import Favorite from "./Favorite";
 import Permission from "./Permission";
 
 interface User {
-    id?: string;
+    uid?: string;
     avatar?: string
     //nickName?: string;
     password?: string;
     mail?: string;
     name?: string;
-    company?: Company,
     //surname?: string;
     permissionEntity?: Permission;
     favoriteEntityList?: Array<Favorite>;

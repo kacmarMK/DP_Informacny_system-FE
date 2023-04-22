@@ -12,6 +12,11 @@
                     </svg>
                     </div>
             </div>
+            <div class="col-sm-12 col-lg-6  mb-2">
+                <div class="d-flex justify-content-center">
+                    <Welcome />
+                </div>
+            </div>
             <!-- <button class="btn btn-primary ps-4 pe-4" type="button"  data-bs-toggle="modal" data-bs-target="#potentostatModal"><i class="fas fa-chart-line me-2"></i>{{measurament}}</button>
             <ModalWindow identifier="potentostatModal" title="Meranie" /> -->
             <LanguageSwitcher class="ms-auto" />
@@ -24,6 +29,7 @@
 import { defineComponent } from "@vue/runtime-core";
 import LanguageSwitcher from '../LanguageSwitcher.vue';
 import NavbarProfile from './NavbarProfile.vue'
+import Welcome from '../HomeComponents/Welcome.vue';
 
 export default defineComponent({
      name: 'TopMenu',
@@ -41,8 +47,9 @@ export default defineComponent({
      components:{
         LanguageSwitcher ,  
         // ModalWindow,
-        NavbarProfile
-     }
+        NavbarProfile,
+        Welcome
+     },
  
 })
 </script>

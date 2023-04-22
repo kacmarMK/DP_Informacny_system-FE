@@ -3,9 +3,7 @@
     <Spinner v-if="loading"/>
     <div class="container-fluid" v-else>
       <div class="row gutters mt-4">
-        <div class="col-sm-12 col-lg-6  mb-2">
-          <Welcome />
-        </div>
+
         <!--<div class="col-xs-6 col-md-6 col-lg-3 col-xxl-3 mb-2" v-if="!hidden">
           <YourCompany icon="fas fa-building" path="/company" :title="company.name" />
         </div>
@@ -29,7 +27,7 @@ import {defineComponent} from 'vue';
 //import FavoriteModules from '../components/HomeComponents/FavoriteModules.vue'
 //import FavoriteTeams from '../components/HomeComponents/FavoriteTeams.vue'
 import MainContent from '../components/MainContent.vue'
-import Welcome from '../components/HomeComponents/Welcome.vue'; 
+//import Welcome from '../components/HomeComponents/Welcome.vue'; 
 //import YourCompany from '../components/HomeComponents/YourCompany.vue'; 
 import User from '@/interfaces/User';
 import ResponseData from '@/services/ResponseData';
@@ -42,7 +40,7 @@ export default defineComponent({
   name: 'HomeView',
   components: {
     MainContent,
-    Welcome,
+    //Welcome,
     //YourCompany,
     //FavoriteModules,
     //FavoriteTeams,
@@ -58,11 +56,10 @@ export default defineComponent({
   }),
   created(){
     let user: User = Object.assign({}, JSON.parse(sessionStorage.getItem('user') || '{}'));
-    if(user.id){
-      this.userId = user.id
+    if(user.uid){
+      this.userId = user.uid
       this.loading = false
     }
-
   }
 })
 </script>
