@@ -15,7 +15,7 @@ class UserService {
     }
 
     getAllUsers(): Promise<any> {
-        return http.get('user/');
+        return http.get('user');
     }
 
     addUser(user: User): Promise<any> {

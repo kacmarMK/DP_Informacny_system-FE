@@ -9,7 +9,8 @@ import LineChart from "./components/Charts/LineChart.vue";
 import BarChart from "./components/Charts/BarChart.vue";
 import PieChart from "./components/Charts/PieChart.vue";
 import AreaChart from "./components/Charts/AreaChart.vue";
-import SetupedValue from "./components/DashboardComponents/SetupedValue.vue"
+import SetupedValue from "./components/DashboardComponents/SetupedValue.vue";
+import HomePanel from "./components/HomeComponents/HomePanel.vue";
 //yimport setGoogleApi from './google.js'
 
 
@@ -23,6 +24,7 @@ app.component('BarChart', BarChart)
 app.component('PieChart', PieChart)
 app.component('AreaChart', AreaChart)
 app.component('SetupedValue', SetupedValue)
+app.component('HomePanel', HomePanel)
 //app.use(VueApexCharts)
 //setGoogleApi(app)
 app.mount('#app')

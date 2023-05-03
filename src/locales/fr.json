@@ -24,7 +24,7 @@
       "home_view": {
         "profile_settings": "Paramétres de profil ",
         "redirect": "Réorienter",
-        "favorite_modules": "Modules préférées",
+        "favorite_modules": "Collections préférées",
         "favorite_teams": "Équipes préférées",
         "welcome_back": "Content de vous revoir"
       },
@@ -57,30 +57,39 @@
       "company_view": {
         "members": "Membres",
         "teams": "Équipes",
-        "breadcrumb_heading": "Entreprise",
+        "breadcrumb_heading": "Équipes",
         "general_info": "Info général",
         "email_adress": "Adresse email:",
         "phone_number": "Numéro de téléphone:",
         "change_permissions": "Modifier les autorisations",
-        "company_info_form_name": "Nom de l´entreprise",
+        "company_info_form_name": "Nom de l´équipes",
         "remove": "Supprimer",
-        "change_company_info": "Modifier les informations de l´entreprise",
+        "change_company_info": "Modifier les informations de l´équipes",
         "manage_permission": "Gérer l´autorisation",
         "number_of_teams": "Nombre d´équipes",
         "number_of_members": "Nombre de membres",
         "add_team": "Ajouter une équipe",
         "no_member_yet": "Aucun membre",
         "no_team_yet": "Aucune équipe",
-        "no_modules_yet": "Aucuns modules",
+        "no_modules_yet": "Aucuns collections",
         "edit_team": "Editér l´équipe",
         "choose_permision": "Choisir l´autorisation",
         "team_name": "Nom d´équipe",
         "description": "Description",
-        "modules": "Modules"
+        "modules": "Collections",
+        "no_team": "Vous n'êtes membre d'aucune équipe. Rejoignez une équipe ou créez-en une nouvelle."
+      },
+      "modul_view": {
+        "heading": "Liste des Dispositifs",
+        "link": "Installations",
+        "add_module": {
+          "name": "Titre",
+          "icon": "Icône"
+        }
       },
       "modules_view": {
-        "heading": "Liste des modules",
-        "link": "Modules",
+        "heading": "Liste des Collections",
+        "link": "Collections",
         "add_module": "Ajouter un module"
       },
       "notifications_view": {
@@ -95,10 +104,10 @@
         "heading": "Gérer les autorisations",
         "button": "Ajouter l´autorisation",
         "permissions": "Autorisations",
-        "company": "Entreprise",
+        "company": "Équipes",
         "permission_list": {
-          "add_member_to_company": "Ajouter un nouveau membre á l´entreprise",
-          "remove_member_from_company": "Supprimer un membre de l´entreprise",
+          "add_member_to_company": "Ajouter un nouveau membre á l´équipes",
+          "remove_member_from_company": "Supprimer un membre de l´équipes",
           "change_permission": "Modifier les autorisation de l´utilisateur",
           "add_team": "Créer une nouvelle équipe",
           "remove_team": "Supprimer l´équipe de l´entreprise",
@@ -117,7 +126,7 @@
         "link": "Équipes",
         "not_assigned": "Vous n´etes pas encore assigné á une équipe",
         "members": "Membres",
-        "modules": "Modules"
+        "modules": "Collections"
       },
       "team_view": {
         "first_name": "Prénom",
@@ -134,8 +143,8 @@
         }
       },
       "module_view": {
-        "heading": "Liste des modules",
-        "link": "Modules",
+        "heading": "Liste des collections",
+        "link": "Collections",
         "add_module": {
           "name": "Nom",
           "icon": "Icone"
@@ -160,8 +169,8 @@
     "main_content": {
       "sidebar_menu": {
         "overview": "Résumé",
-        "modules": "Modules",
-        "company": "Entreprise",
+        "modules": "Collections",
+        "company": "Équipes",
         "teams": "Équipes",
         "statistics": "Statistiques",
         "notifications": "Notifications",
@@ -194,6 +203,8 @@
       "edit_mode": "Mode édition",
       "cancel": "Annuler",
       "save": "Sauvegarder",
-      "add_modul": "Ajouter un module"
+      "add_modul": "Ajouter un module",
+      "join_team": "Rejoindre l'équipe",
+      "create_team": "Créer une équipe"
     }
   }

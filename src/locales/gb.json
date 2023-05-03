@@ -24,7 +24,7 @@
     "home_view" : {
       "profile_settings": "Profile Settings",
       "redirect": "Redirect",
-      "favorite_modules": "Favorite Modules",
+      "favorite_modules": "Favorite Collections",
       "favorite_teams": "Favorite Teams",
       "welcome_back": "Welcome Back"
     },
@@ -57,43 +57,52 @@
     "company_view": {
       "members": "Members",
       "teams": "Teams",
-      "breadcrumb_heading": "Company",
+      "breadcrumb_heading": "Team",
       "general_info": "General info",
       "email_adress": "Email Adress:",
       "phone_number": "Phone Number:",
       "change_permissions": "Change Permissions",
-      "company_info_form_name": "Company name",
+      "company_info_form_name": "Team name",
       "remove": "Remove",
-      "change_company_info": "Change Company Info",
+      "change_company_info": "Change Team Info",
       "manage_permission": "Manage Permissions",
       "number_of_teams": "Number of teams",
       "number_of_members": "Number of Members",
       "add_team": "Add Team",
       "no_member_yet": "No members yet",
       "no_team_yet": "No teams yet",
-      "no_modules_yet": "No modules yet",
+      "no_modules_yet": "No collections yet",
       "edit_team": "Edit team",
       "choose_permision": "Choose permision",
       "team_name" : "Team name",
       "description" : "Description",
-      "modules": "Modules"
+      "modules": "Collections",
+      "no_team": "You are not member of any team. Join team or create new."
+    },
+    "modul_view": {
+      "heading": "Devices List",
+      "link": "Devices",
+      "add_module": {
+        "name": "Name",
+        "icon": "Icon"
+      }
     },
     "modules_view": {
-      "heading": "Modules List",
-      "link": "Modules",
+      "heading": "Collections List",
+      "link": "Collections",
       "add_module": "Add module"
     },
     "permissions_view": {
       "heading": "Manage Permisions",
       "button": "Add Permission",
       "permissions": "Permissions",
-      "company": "Company",
+      "company": "Team",
       "permission_list": {
-        "add_member_to_company": "Add new member to company",
-        "remove_member_from_company": "Remove member from company",
+        "add_member_to_company": "Add new member to team",
+        "remove_member_from_company": "Remove member from team",
         "change_permission": "Change user's permission",
         "add_team": "Create new team",
-        "remove_team": "Remove team from company",
+        "remove_team": "Remove team from team",
         "add_module": "Add new module",
         "remove_module": "Remove module",
         "edit_module": "Edit module",
@@ -117,7 +126,7 @@
       "link": "Teams",
       "not_assigned": "You are not assigned into any team yet",
       "members": "Members",
-      "modules": "Modules"
+      "modules": "Collections"
     },
     "team_view": {
       "first_name": "First Name",
@@ -134,8 +143,8 @@
       }
     },
     "module_view": {
-      "heading": "Modules List",
-      "link": "Modules",
+      "heading": "Collection List",
+      "link": "Collections",
       "add_module": {
         "name": "Name",
         "icon": "Icon"
@@ -160,8 +169,8 @@
   "main_content": {
     "sidebar_menu": {
       "overview": "Overview",
-      "modules": "Modules",
-      "company": "Company",
+      "modules": "Collections",
+      "company": "Team",
       "teams": "Teams",
       "statistics": "Statistics",
       "notifications": "Notifications",
@@ -194,7 +203,9 @@
     "cancel": "Cancel",
     "save": "Save",
     "add_modul": "Add module",
-    "templates": "Templates"
+    "templates": "Templates",
+    "join_team": "Join Team",
+    "create_team": "Create Team"
   }
 
 }

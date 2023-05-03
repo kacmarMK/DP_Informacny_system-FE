@@ -1,31 +1,42 @@
 import http from "@/http-common";
 import Command from "@/interfaces/Command";
-import CommandHelper from "@/interfaces/CommandHelper";
 
 class CommandService {
 
-    getAllCommands(): Promise<any> {
-        return http.get("command/getAllCommands");
+    createCommand(command: Command): Promise<any> {
+        return http.post("jobs/command/createCommand", command);
     }
 
-    getAllCommandByName(): Promise<any> {
-        return http.get("command/getAllCommands");
+    getCommand(commandId: string): Promise<any> {
+        return http.get("jobs/command/getCommandById/" + commandId);
     }
 
-    getCommandById(id: string): Promise<any> {
-        return http.get("command/getCommandById/" + id);
+    getCommandByName(commandName: string): Promise<any> {
+        return http.get("jobs/command/getCommandByName/" + commandName);
     }
 
-    addCommand(command: CommandHelper): Promise<any> {
-        return http.post("command/addCommand", command);
+    getAllCommands(sortBy: string, sortDirection: string): Promise<any> {
+        return http.get("jobs/command/getAllCommands/" + sortBy + "/" + sortDirection);
     }
 
-    deleteCommandById(id: string): Promise<any> {
-        return http.delete("command/deleteById?Id=" + id)
+    getAllCommandsWithPagination(page: number, pageSize: number, sortBy: string, sortDirection: string): Promise<any> {
+        return http.get("jobs/command/getAllCommandsWithPagination/" + page + "/" + pageSize + "/" + sortBy + "/" + sortDirection);
     }
 
-    pendingRequest(command: CommandHelper): Promise<any> {
-        return http.post('command/pendingRequest', command)
+    getCommandsByDeviceType(deviceType: string, sortBy: string, sortDirection: string): Promise<any> {
+        return http.get("jobs/command/getCommandsByDeviceType/" + deviceType + "/" + sortBy + "/" + sortDirection);
+    }
+
+    getCommandByDeviceTypeAndPages(deviceType: string, page: number, pageSize: number, sortBy: string, sortDirection: string): Promise<any> {
+        return http.get("jobs/command/getCommandByDeviceTypeAndPages/" + deviceType + "/" + page + "/" + pageSize + "/" + sortBy + "/" + sortDirection);
+    }
+
+    deleteCommand(commandId: string): Promise<any> {
+        return http.delete("jobs/command/deleteCommand/" + commandId);
+    }
+
+    updateCommand(commandId: string): Promise<any> {
+        return http.put("jobs/command/updateCommand/" + commandId);
     }
 }
 

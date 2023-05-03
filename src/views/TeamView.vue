@@ -11,13 +11,13 @@
 import { defineComponent } from "@vue/runtime-core";
 import MainContent from "../components/MainContent.vue";
 import Team from "@/interfaces/Team";
-import TeamService from "@/services/TeamService";
+//import TeamService from "@/services/TeamService";
 import Breadcrumb from "../components/Breadcrumb.vue";
-import AddModuleForm from "../components/TeamComponents/AddModuleForm.vue";
+//import AddModuleForm from "../components/TeamComponents/AddModuleForm.vue";
 import AddMemberForm from "../components/TeamComponents/AddMemberForm.vue";
-import ResponseData from "@/services/ResponseData";
-import User from "@/interfaces/User";
-import Module from "@/interfaces/Module";
+//import ResponseData from "@/services/ResponseData";
+//import User from "@/interfaces/User";
+//import Module from "@/interfaces/Module";
 import Spinner from "@/components/Spinner.vue";
 import Permission from "@/interfaces/Permission";
 import ModalBasicWindow from "../components/modals/ModalBasicWindow.vue";
@@ -30,11 +30,11 @@ export default defineComponent({
   components: {
     MainContent,
     Breadcrumb,
-    AddModuleForm,
-    AddMemberForm,
+    //AddModuleForm,
+    //AddMemberForm,
     Spinner,
-    ModalBasicWindow,
-    Avataaars,
+    //ModalBasicWindow,
+    //Avataaars,
   },
   data: () => ({
     team: {} as Team,

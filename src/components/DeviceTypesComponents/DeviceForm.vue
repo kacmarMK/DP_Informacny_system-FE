@@ -43,12 +43,6 @@ export default defineComponent({
         }else {
             this.type.commands = [] as  Array<Command>; 
         }
-
-        CommandService.getAllCommands().then( (response: ResponseData<Array<Command>>) => {
-            this.commandList = response.data
-        }).catch( (err) => {
-            console.log(err)
-        })
     },
     methods: {
         submitData(){

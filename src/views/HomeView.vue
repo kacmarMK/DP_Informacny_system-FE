@@ -2,20 +2,8 @@
   <MainContent>
     <Spinner v-if="loading"/>
     <div class="container-fluid" v-else>
-      <div class="row gutters mt-4">
-
-        <!--<div class="col-xs-6 col-md-6 col-lg-3 col-xxl-3 mb-2" v-if="!hidden">
-          <YourCompany icon="fas fa-building" path="/company" :title="company.name" />
-        </div>
-        <div class="col-xs-6 col-md-6 col-lg-3 col-xxl-3 mb-2">
-          <YourCompany icon="fas fa-user" :title="$t('views.home_view.profile_settings')" path="/settings" />
-        </div>
-        <div class="col-sm-12 col-lg-6  mb-2"  v-if="!hidden">
-          <FavoriteModules :modules="modules"/>
-        </div>
-        <div class="col-sm-12 col-lg-6  mb-2"  v-if="!hidden">
-          <FavoriteTeams :teams="teams"/>
-        </div>-->
+      <div>
+        <HomePanel :heading="$t('main_content.sidebar_menu.notifications')"/>
       </div>
     </div>
 
@@ -35,6 +23,8 @@ import Team from '@/interfaces/Team';
 import Module from '@/interfaces/Module';
 import Favorite from '@/interfaces/Favorite';
 import Spinner from '@/components/Spinner.vue';
+import HomePanel from '@/components/HomeComponents/HomePanel.vue'
+//import GrafanaDashboard from '@/components/GrafanaDashboard.vue';
 
 export default defineComponent({
   name: 'HomeView',
@@ -44,6 +34,8 @@ export default defineComponent({
     //YourCompany,
     //FavoriteModules,
     //FavoriteTeams,
+    //GrafanaDashboard,
+    HomePanel,
     Spinner
   },
   data: () => ({
@@ -63,3 +55,7 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+
+</style>

@@ -89,11 +89,6 @@ export default defineComponent({
         DeviceForm
     },
     created() {
-        CommandService.getAllCommands().then( (response: ResponseData<Array<Command>>) => {
-            this.commands = response.data;
-        }).catch( (err) => {
-            console.log(err)
-        })
 
         DeviceTypeService.getAllTypes().then( (response: ResponseData<Array<DeviceType>>) => {
             this.devices = response.data;
@@ -102,34 +97,9 @@ export default defineComponent({
         })
     },
     methods: {
-        addCommand(command: Command){
-            let helper= {} as  CommandHelper ;
-            helper.id = command.id
-            helper.name = command.name;
-            helper.commandId = command.commandId;
-            helper.fields = JSON.stringify(command.fields);
-            CommandService.addCommand(helper).then( (response: ResponseData<CommandHelper>) => {
-                let command = {} as Command
-                command.name = response.data.name;
-                command.commandId = response.data.commandId;
-                command.fields = JSON.parse(response.data.fields);
-                this.commands.push(command)
-            }).catch( (err) => {
-                console.log(err)
-            })
-        },
         editCommand(command: Command){
             let com = this.commands.filter( c => c.id != command.id);
             this.commands = com;
-            this.addCommand(command);
-        },
-        removeCommand(id: string){
-            CommandService.deleteCommandById(id).then( () => {
-                 let com = this.commands.filter( c => c.id != id);
-                this.commands = com;
-            }).catch( (err) => {
-                console.log(err)
-            })
         },
         addDevice(device: DeviceType){
             DeviceTypeService.addDeviceType(device).then( (response: ResponseData<DeviceType>) => {

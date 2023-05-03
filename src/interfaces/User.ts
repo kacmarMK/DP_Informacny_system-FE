@@ -1,5 +1,6 @@
 import Favorite from "./Favorite";
 import Permission from "./Permission";
+import PERMISSIONS from '../modules/enums/permissions.js';
 
 interface User {
     uid?: string;
@@ -11,6 +12,8 @@ interface User {
     //surname?: string;
     permissionEntity?: Permission;
     favoriteEntityList?: Array<Favorite>;
+    permission?: typeof PERMISSIONS;
+    company?: string;
     /* TODO: TAKTO BUDE VYZERAT FINALNY USER 
     id?: string;
     username?: string;

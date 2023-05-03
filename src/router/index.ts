@@ -23,9 +23,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/DashboardView.vue')
   },
   {
-    path: '/modules/:id',
-    name: 'module',
-    component: () => import(/* webpackChunkName: "module" */ '../views/ModulView.vue'),
+    path: '/collections',
+    name: 'collections',
+    component: () => import(/* webpackChunkName: "module" */ '../views/ModuleView.vue'),
   },
   {
     path: '/settings',
@@ -68,6 +68,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/types',
     name: 'types',
     component: () => import(/* webpackChunkName: 'types' */ '../views/DeviceTypeView.vue')
+  },
+  {
+    path: '/company',
+    name: 'company',
+    component: () => import(/* webpackChunkName: "company" */ '../views/CompanyView.vue')
   }
 ]
 

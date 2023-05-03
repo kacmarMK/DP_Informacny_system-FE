@@ -26,8 +26,6 @@ export default defineComponent({
         userId: '' as string,
         favorite: {} as Favorite*/
     }),
-    created() {
-    },
     methods: {
     }
 })

@@ -24,7 +24,7 @@
     "home_view" : {
       "profile_settings": "Nastavení Profilu",
       "redirect": "Přesměrování",
-      "favorite_modules": "Oblíbené Moduly",
+      "favorite_modules": "Oblíbené Kolekce",
       "favorite_teams": "Oblíbené týmy",
       "welcome_back": "Vítejte spátky"
     },
@@ -63,21 +63,22 @@
       "phone_number": "Telefonní číslo:",
       "change_permissions": "Změna privilegii",
       "remove": "Odstrániť",
-      "breadcrumb_heading": "Firma",
+      "breadcrumb_heading": "Tím",
       "company_info_form_name": "Název",
-      "change_company_info": "Změnit údaje firmy",
+      "change_company_info": "Změnit údaje tímu",
       "manage_permission": "Spravovat privilegia",
       "number_of_teams": "Počet týmů",
       "number_of_members": "Počet členů",
       "add_team": "Přidat tým",
       "no_member_yet": "Nemá zatím žádné uživatele",
       "no_team_yet": "Nemá zatím žádné týmy",
-      "no_modules_yet": "Nemá zatím žádné moduly",
+      "no_modules_yet": "Nemá zatím žádné kolekce",
       "edit_team": "Upravit tým",
       "choose_permision": "Zvolit roli",
       "team_name" : "Název týmu",
       "description" : "Popis",
-      "modules": "Moduly"
+      "modules": "Kolekce",
+      "no_team": "Nejste členem žádného týmu. Připojte se k týmu nebo vytvořte nový."
       
       },
     "modules_view": {
@@ -87,12 +88,12 @@
     },
     "permissions_view": {
       "heading": "Spravovat privilegia",
-      "company": "Firma",
+      "company": "Tím",
       "button": "Přidat privilegia",
       "permissions": "Privilegia",
       "permission_list": {
-        "add_member_to_company": "Přidat nového člena do firmy",
-        "remove_member_from_company": "Vymazat člena z firmy",
+        "add_member_to_company": "Přidat nového člena do tímu",
+        "remove_member_from_company": "Vymazat člena z tímu",
         "change_permission": "Změna privilegia uživatelů",
         "add_team": "Vytvoření týmu",
         "remove_team": "Vymazání týmu",
@@ -111,7 +112,7 @@
       "link": "Týmy",
       "not_assigned": "Momentálně se nenacházíte v žádném týmu",
       "members": "Členové",
-      "modules": "Moduly"
+      "modules": "Kolekce"
     },
     "team_view": {
       "first_name": "Jméno",
@@ -128,8 +129,8 @@
       }
     },
     "modul_view": {
-      "heading": "Seznam Modulov",
-      "link": "Moduly",
+      "heading": "Seznam Zařízení",
+      "link": "Zařízení",
       "add_module": {
         "name": "Název",
         "icon": "Ikona"
@@ -163,8 +164,8 @@
   "main_content": {
     "sidebar_menu": {
       "overview": "Přehled",
-      "modules": "Moduly",
-      "company": "Firma",
+      "modules": "Kolekce",
+      "company": "Tím",
       "teams": "Týmy",
       "statistics": "Statistiky",
       "notifications": "Upozornění",
@@ -189,6 +190,8 @@
     "cancel": "Zrušit",
     "save": "Uložit",
     "add_modul": "Přidat modul",
-    "templates": "Témata"
+    "templates": "Témata",
+    "join_team": "Připojit se k týmu",
+    "create_team": "Vytvořit tým"
     }
 }

@@ -110,9 +110,7 @@ import DashboardService from "@/services/DashboardService"
 import Spinner from '@/components/Spinner.vue';
 import Breadcrumb from '../components/Breadcrumb.vue'
 import DeviceTypeService from "@/services/DeviceTypeService"
-import CommandService from "@/services/CommandService"
 // import ManualControl from '../components/DashboardComponents/ManualControl.vue'
-import JobComponent from '../components/DashboardComponents/JobComponent.vue'
 import JobService from "@/services/JobService"
 export default defineComponent({
     name: 'DashboardView',
@@ -127,8 +125,7 @@ export default defineComponent({
       ComponentPicker,
       TemplatePicker,
       Spinner,
-      Breadcrumb,
-      JobComponent
+      Breadcrumb
     },
     data: () => ({
       layout: [],

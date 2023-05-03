@@ -3,10 +3,10 @@
     <div id="sidebar">
         <ul class="navbar-nav sidebar sidebar-dark mt-3">
             <NavLink icon="fas fa-tachometer-alt" :label="$t('main_content.sidebar_menu.overview')" path="/home" />
-            <NavLink icon="fas fa-users" :label="$t('main_content.sidebar_menu.teams')"  path="/teams" />
+            <NavLink icon="fas fa-users" :label="$t('main_content.sidebar_menu.company')"  path="/company" />
             <NavLink icon="fas fa-bell" :label="$t('main_content.sidebar_menu.notifications')"  path="/notifications" />
             <NavLink icon="fas fa-list-check" :label="$t('main_content.sidebar_menu.jobs')"  path="/jobs" />
-            <!--<NavLink icon="fas fa-building" :label="$t('main_content.sidebar_menu.company')" path="/company" />-->
+            <NavLink icon="fas fa-code-fork" :label="$t('main_content.sidebar_menu.modules')" path="/collections" />
         </ul>
         </div>
     </div>

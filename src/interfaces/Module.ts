@@ -1,9 +1,10 @@
-import Dashboard from "./Dashboard";
+import Device from "./Device";
 
 interface Module {
-    id?: string;
+    uid?: string;
     name?: string;
-    dashboardEntityList: Array<Dashboard>
+    devices?: Array<Device>;
+    createdAt?: number;
 }
 
 export default Module;

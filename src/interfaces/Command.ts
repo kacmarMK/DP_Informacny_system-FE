@@ -1,10 +1,13 @@
 import Field from "./Field";
+import DeviceTypeEnum from '../modules/enums/DeviceTypeEnum.js';
 
 interface Command {
     id?: string;
-    name: string;
-    commandId: number;
-    fields: Array<Field>;
+    name?: string;
+    params?: Array<number>;
+    deviceType?: typeof DeviceTypeEnum;
+    createdAt?: number;
+    deactivated?: boolean;
 }
 
 

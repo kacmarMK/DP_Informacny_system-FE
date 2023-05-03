@@ -50,23 +50,12 @@ export default defineComponent({
         if(this.command1 != undefined){
             this.command.id =  this.command1.id;
             this.command.name = this.command1.name;
-            this.command.commandId = this.command1.commandId;
-            this.command.fields = JSON.parse(this.command1.fields)
         }
     },
     methods: {
         submitData(){
             this.$emit('submitData', this.command);
             this.command = {} as Command
-        },
-        addField(){
-            if(this.command.fields == undefined) this.command.fields = new Array<Field>();
-            this.command.fields.push(this.field)
-            this.field = {} as Field
-        },
-        removeField(field: Field){
-            let index = this.command.fields.indexOf(field)
-            this.command.fields.splice(index, 1)
         }
     }
 })
