@@ -1,7 +1,6 @@
 <template>
   <MainContent>
-    <Spinner v-if="loading"/>
-    <div class="container-fluid" v-else>
+    <div class="container-fluid">
       <div>
         <HomePanel :heading="$t('main_content.sidebar_menu.notifications')"/>
       </div>
@@ -22,7 +21,6 @@ import ResponseData from '@/services/ResponseData';
 import Team from '@/interfaces/Team';
 import Module from '@/interfaces/Module';
 import Favorite from '@/interfaces/Favorite';
-import Spinner from '@/components/Spinner.vue';
 import HomePanel from '@/components/HomeComponents/HomePanel.vue'
 //import GrafanaDashboard from '@/components/GrafanaDashboard.vue';
 
@@ -35,8 +33,7 @@ export default defineComponent({
     //FavoriteModules,
     //FavoriteTeams,
     //GrafanaDashboard,
-    HomePanel,
-    Spinner
+    HomePanel
   },
   data: () => ({
      hidden: true as boolean,

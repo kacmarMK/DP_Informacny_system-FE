@@ -40,7 +40,7 @@ export default defineComponent({
     methods: {
         toggleSidebar() {
             document.body.classList.toggle('sb-sidenav-toggled');
-            document.querySelector('.mid-bar').classList.toggle('active');
+            //document.querySelector('.mid-bar').classList.toggle('active');
             
         }
      },

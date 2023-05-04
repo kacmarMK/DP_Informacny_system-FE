@@ -6,10 +6,10 @@ interface Recipe {
     name?: string;
     commands?: Array<Command>;
     subRecipes?: Array<Recipe>;
-    deviceType?: typeof DeviceTypeEnum;
-    isSubRecipe?: boolean;
+    deviceType?: string;
+    isSubRecipe: Boolean;
     createdAt?: number;
-    deactivated?: boolean;
+    deactivated: Boolean;
 }
 
 export default Recipe;

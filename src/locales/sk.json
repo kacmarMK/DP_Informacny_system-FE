@@ -135,6 +135,14 @@
       "heading":"Joby",
       "link": "Joby"
     },
+    "recipes_view": {
+      "heading":"Recepty",
+      "link": "Recepty"
+    },
+    "commands_view": {
+      "heading":"Príkazy",
+      "link": "Príkazy"
+    },
     "modul_view": {
       "heading": "Zoznam Zariadení",
       "link": "Zariadenia",
@@ -168,7 +176,9 @@
       "teams": "Tímy",
       "statistics": "Štatistiky",
       "notifications": "Notifikácie",
-      "jobs": "Joby"
+      "jobs": "Joby",
+      "recipes": "Recepty",
+      "commands": "Príkazy"
     },"tabs": {
       "general": "Všeobecné",
       "preparation": "Príprava",

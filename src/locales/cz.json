@@ -144,6 +144,14 @@
       "heading":"Joby",
       "link": "Joby"
     },
+    "recipes_view": {
+      "heading":"Recepty",
+      "link": "Recepty"
+    },
+    "commands_view": {
+      "heading":"Příkazy",
+      "link": "Příkazy"
+    },
     "generate_avatar_view": {
        "accessories_type": "Doplňky",
        "clothe_type": "Oblečení",
@@ -169,7 +177,9 @@
       "teams": "Týmy",
       "statistics": "Statistiky",
       "notifications": "Upozornění",
-      "jobs": "Joby"
+      "jobs": "Joby",
+      "recipes": "Recepty",
+      "commands": "Příkazy"
     },
     "top_menu": {
       "profile": {

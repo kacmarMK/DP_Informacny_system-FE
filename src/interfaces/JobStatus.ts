@@ -4,14 +4,14 @@ import DataPoint from './DataPoint';
 interface JobStatus {
     uid?: string;
     jobId?: string;
-    retCode?: typeof JobStatusEnum;
-    code?: typeof JobStatusEnum;
+    retCode?: string;
+    code?: string;
     currentStep?: number;
     totalSteps?: number;             
     currentCycle?: number;
     data?: Array<DataPoint>;
     createdAt?: number;
-    lastUpdated?: Date;
+    //lastUpdated?: Date;           //TODO
 }
 
 export default JobStatus;

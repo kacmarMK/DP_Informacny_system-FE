@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/collections',
     name: 'collections',
-    component: () => import(/* webpackChunkName: "module" */ '../views/ModuleView.vue'),
+    component: () => import(/* webpackChunkName: "collections" */ '../views/ModuleView.vue'),
   },
   {
     path: '/settings',
@@ -49,9 +49,19 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "notifications" */ '../views/NotificationsView.vue')
   },
   {
+    path: '/recipes',
+    name: 'recipes',
+    component: () => import(/* webpackChunkName: "recipes" */ '../views/RecipesView.vue')
+  },
+  {
     path: '/jobs',
     name: 'jobs',
     component: () => import(/* webpackChunkName: "jobs" */ '../views/JobsView.vue')
+  },
+  {
+    path: '/commands',
+    name: 'commands',
+    component: () => import(/* webpackChunkName: "commands" */ '../views/CommandsView.vue')
   },
   {
     path: '/teams/:id',

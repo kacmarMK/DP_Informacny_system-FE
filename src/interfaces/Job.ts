@@ -1,5 +1,4 @@
 import Command from "./Command";
-import JobStatusEnum from '../modules/enums/JobStatusEnum';
 import JobStatus from "./JobStatus";
 
 interface Job {
@@ -9,7 +8,7 @@ interface Job {
     noOfCmds?: number;
     noOfReps?: number;
     status?: JobStatus;
-    currentStatus?: typeof JobStatusEnum;
+    currentStatus?: string;
     commands?: Array<Command>;
     toCancel?: boolean;
     paused?: boolean;

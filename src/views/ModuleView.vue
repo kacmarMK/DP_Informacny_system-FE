@@ -1,23 +1,27 @@
 <template>
   <MainContent>
-    <Spinner v-if="loading"/>
-    <div v-else>
+    <div>
       <Breadcrumb :heading="$t('views.modul_view.heading')" :third="$t('views.modul_view.link')"/>
       <div class="grid-container">
-        <div v-if="!creatingDevice">
-          <ul>
-            <li v-for="device in gridDevices" :key="device.uid">{{ device.name }}</li>
-          </ul>
-        </div>
-        <div v-else>
-          <DeviceForm @cancel="toggleDeviceCreation" @submit="createDevice" />
+        <div v-for="device in gridDevices" :key="device.uid" class="device-card">
+          <h3>{{ device.name }}</h3>
+          <p>MAC: {{ device.mac }}</p>
+          <p>Type: {{ device.type }}</p>
+          <p>Version: {{ device.version }}</p>
+          <p>Firmware: {{ device.firmware }}</p>
+          <p>Device deactivated: {{ device.deactivated }}</p>
         </div>
       </div>
       <div>
-        <button v-if="!creatingDevice" @click="toggleDeviceCreation">Add Device</button>
-        <button v-else @click="toggleDeviceCreation">Back to Device List</button>
-        <button @click="removeDevice">Remove Device</button>
+        <button class="create-device-btn" @click="toggleDeviceCreation">
+          <i class="fa fa-plus"></i> Create Device
+        </button>
       </div>
+      <transition name="fade">
+        <div class="create-device-container" v-if="creatingDevice">
+          <CreateDeviceComponent></CreateDeviceComponent>
+        </div>
+      </transition>
     </div>
   </MainContent>
 </template>
@@ -26,18 +30,18 @@
 import {defineComponent} from 'vue';
 import MainContent from '../components/MainContent.vue'
 import Breadcrumb from '../components/Breadcrumb.vue'
-import DeviceForm from '../views/CreateDeviceView.vue';
-import Device from '../interfaces/Device'
+import Device from '../interfaces/Device';
+import DeviceService from '../services/DeviceService';
+import CreateDeviceComponent from '../components/CreateDeviceComponent.vue';
 
 export default defineComponent({
   name: 'ModuleView',
   components: {
     MainContent, 
     Breadcrumb,
-    DeviceForm
+    CreateDeviceComponent
   },
   data: () => ({
-    error: false as boolean,
     errorMessage: "" as string,
     loading: false as boolean,
     gridDevices: [] as Device[],
@@ -45,42 +49,68 @@ export default defineComponent({
     creatingDevice: false as boolean
   }),
   methods: {
-    addDevice() {
-      if (!this.creatingDevice) {
-        this.toggleDeviceCreation();
+    async getDevices() {
+      try {
+        this.loading = true;
+        const response = await DeviceService.getDevices();
+        this.gridDevices = response.data;
+      } catch (error) {
+        console.log("Error when calling getDevices() service.");
+      } finally {
+        this.loading = false;
       }
     },
-    removeDevice() {
-      if (this.gridDevices.length > 0) {
-        this.gridDevices.pop();
-      }
+    addDevice() {
+      this.creatingDevice = !this.creatingDevice;
     },
     toggleDeviceCreation() {
       this.creatingDevice = !this.creatingDevice;
     },
-    createDevice(device: Device) {
-      this.gridDevices.push(device);
-      this.toggleDeviceCreation();
-    }
-  }
-
+  },
+  created() {
+    this.getDevices();
+  },
 })
 </script>
 
-<style scoped>
+<style>
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
 
-.card {
-   border: 1px solid #e6edef;
-   transition: all 0.6s ease;
-   cursor: pointer;
-}
-
-.card:hover .icon-round {
-  background-color:  var(--blue-primary-color);
-   color: white;
-}
-.card-header {
-  background: transparent;
-}
-
-</style>
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  button.create-device-btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border-radius: 6px;
+  }
+  .create-device-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+  }
+  .device-card {
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    text-align: center
+  }
+  </style>

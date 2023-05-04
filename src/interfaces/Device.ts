@@ -1,4 +1,3 @@
-import DeviceTypeEnum from '../modules/enums/DeviceTypeEnum.js';
 import Job from './Job';
 import DataPointTag from './DataPointTag';
 
@@ -6,7 +5,7 @@ interface Device {
     uid?: string;
     name?: string;
     mac?: number;
-    type?: typeof DeviceTypeEnum;
+    type?: string;
     version?: string;
     firmware?: string;
     jobs?: Array<Job>;
@@ -15,7 +14,7 @@ interface Device {
     addTime?: number;
     initExpireTime?: number;
     initApiKey?: string;
-    deactivated?: boolean;
+    deactivated: boolean;
 }
 
 export default Device;

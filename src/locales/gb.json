@@ -82,10 +82,13 @@
     "modul_view": {
       "heading": "Devices List",
       "link": "Devices",
-      "add_module": {
-        "name": "Name",
-        "icon": "Icon"
-      }
+      "add_device": "Create device",
+      "routing_link": "/collections"
+    },
+    "create_device": {
+      "heading": "Create Device",
+      "link": "Create Device",
+      "add_device": "Create device"
     },
     "modules_view": {
       "heading": "Collections List",
@@ -120,6 +123,14 @@
     "jobs_view": {
       "heading":"Jobs",
       "link": "Jobs"
+    },
+    "recipes_view": {
+      "heading":"Recipes",
+      "link": "Recipes"
+    },
+    "commands_view": {
+      "heading":"Commands",
+      "link": "Commands"
     },
     "teams_view": {
       "heading": "Teams List",
@@ -174,7 +185,9 @@
       "teams": "Teams",
       "statistics": "Statistics",
       "notifications": "Notifications",
-      "jobs": "Jobs"
+      "jobs": "Jobs",
+      "recipes": "Recipes",
+      "commands": "Commands"
     },"tabs": {
       "general": "General",
       "preparation": "Preparation",
