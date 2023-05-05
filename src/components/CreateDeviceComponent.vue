@@ -101,7 +101,8 @@ export default defineComponent({
 
       const response: ResponseData<Device> = await DeviceService.createDevice(this.device);
       // Clear the form
-      //this.device = {};
+      this.device = {deactivated: false};
+      location.reload();
     },
   },
 });

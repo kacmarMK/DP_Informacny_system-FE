@@ -35,8 +35,8 @@ class RecipeService {
         return http.get("jobs/recipe/getByDeviceTypeAndPages/" + type + "/" + page + "/" + pageSize + "/" + sortBy + "/" + sortDirection);
     }
 
-    updateRecipe(recipeId: string): Promise<any> {
-        return http.put("jobs/recipe/updateRecipe/" + recipeId);
+    updateRecipe(recipeId: string, recipe: Recipe): Promise<any> {
+        return http.put("jobs/recipe/updateRecipe/" + recipeId, recipe);
     }
 
     addSubRecipeToRecipe(recipeId: string, subRecipeId: string): Promise<any> {

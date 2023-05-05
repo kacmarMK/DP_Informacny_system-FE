@@ -10,6 +10,8 @@
           <p>Version: {{ device.version }}</p>
           <p>Firmware: {{ device.firmware }}</p>
           <p>Device deactivated: {{ device.deactivated }}</p>
+          <button class="delete-button" @click="deleteDevice(device.uid)">X</button>
+
         </div>
       </div>
       <div>
@@ -47,6 +49,7 @@ export default defineComponent({
     gridDevices: [] as Device[],
     newDevice: '',
     creatingDevice: false as boolean
+
   }),
   methods: {
     async getDevices() {
@@ -58,6 +61,17 @@ export default defineComponent({
         console.log("Error when calling getDevices() service.");
       } finally {
         this.loading = false;
+      }
+    },
+    async deleteDevice(deviceId: string) {
+      if(confirm("Are you sure you want to delete this device?")){
+        try {
+          await DeviceService.deleteDevice(deviceId);
+          // If the delete request was successful, update the list of recipes in the UI
+          this.gridDevices = this.gridDevices.filter(device => device.uid !== deviceId);
+        } catch (error) {
+          console.error('Error deleting device.');
+        }
       }
     },
     addDevice() {
@@ -113,4 +127,18 @@ export default defineComponent({
     background-color: #f5f5f5;
     text-align: center
   }
+  .delete-button {
+      position: static;
+      text-align: left;
+      justify-content: start;
+      align-items: start;
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 3px;
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      
+    }
   </style>

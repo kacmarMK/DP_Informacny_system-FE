@@ -5,9 +5,14 @@
           <form class="mt-5" @submit.prevent="handleSubmit">
             <div class="form-group">
               <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" v-model="recipe.name" required>
+              <input type="text" class="form-control" id="name" v-model="command.name" required>
             </div>
-  
+        
+            <div class="form-group">
+                <label for="numbers">Parameters:</label>
+                <input type="text" class="form-control" id="numbers" v-model="params" required placeholder="Enter comma-separated numbers, e.g. 1,2,3">
+            </div>
+
             <div class="form-group">
               <label for="type">Device Type:</label>
               <select class="form-control" id="type" v-model="selectedType" required>
@@ -19,18 +24,13 @@
 
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="isSubRecipe" v-model="isSubRecipe">
-                <label class="form-check-label" for="isSubRecipe">SubRecipe:</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="deactivated" v-model="deactivated" false>
                 <label class="form-check-label" for="deactivated">Deactivated:</label>
               </div>
             </div>
   
+            <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
             <button type="submit" class="btn btn-primary">Create</button>
           </form>
         </div>
@@ -42,39 +42,53 @@
   <script lang="ts">
   import { defineComponent } from 'vue';
   import { DeviceTypeEnum } from '../modules/enums/DeviceTypeEnum';
-  import Recipe from '@/interfaces/Recipe';
-  import RecipeService from "@/services/RecipeService";
+  import Command from '@/interfaces/Command';
+  import CommandService from "@/services/CommandService";
   import ResponseData from "@/services/ResponseData";
 
   export default defineComponent({
-    name: 'CreateRecipe',
+    name: 'CreateCommand',
     components: {
     },
     data: () => ({
-      isSubRecipe: false, 
+      isSubCommand: false, 
       deactivated: false,
-      recipe: {} as Recipe,
+      command: {} as Command,
       deviceTypes: Object.values(DeviceTypeEnum),
       selectedType: '',
+      params: '',
       typeOptions: [
         { value: 'ESP32', label: 'ESP32' },
         { value: 'SDG_CUBE', label: 'SDG_CUBE' },
       ],
+      errorMessage: ''
     }),
     methods: {
       async handleSubmit() {
-        if (this.recipe.commands == null) {
-          this.recipe.commands = [];
+        // Parse the input into an array of numbers
+        const numbersString = this.params;
+        const numbersArray = numbersString.split(',').map(numString => Number(numString.trim()));
+
+        // Check if the input is valid
+        if (numbersArray.some(isNaN)) {
+            // Display an error message and return
+            this.errorMessage = 'Invalid input: Please enter a comma-separated list of numbers';
+            return;
         }
-        if (this.recipe.subRecipes == null) {
-          this.recipe.subRecipes = [];
+
+        // Check if the input contains at least one number
+        if (numbersArray.length === 0) {
+            // Display an error message and return
+            this.errorMessage = 'Invalid input: Please enter at least one number';
+            return;
         }
-        this.recipe.deviceType = this.selectedType;
-        this.recipe.subRecipe = this.isSubRecipe;
-        this.recipe.deactivated = this.deactivated;
+
+        this.command.params = numbersArray;
+        this.command.deviceType = this.selectedType;
+        this.command.deactivated = this.deactivated;
         try{
-          const response: ResponseData<Recipe> = await RecipeService.createRecipe(this.recipe);
-          this.recipe = {id: '', subRecipe: false, deactivated: false,};
+          const response: ResponseData<Command> = await CommandService.createCommand(this.command);
+          this.command = {deactivated: false};
           location.reload();
         } catch (e) {
           //TODO

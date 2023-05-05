@@ -2,14 +2,14 @@ import Command from './Command';
 import DeviceTypeEnum from '../modules/enums/DeviceTypeEnum';
 
 interface Recipe {
-    id?: string;
+    id: string;
     name?: string;
     commands?: Array<Command>;
     subRecipes?: Array<Recipe>;
     deviceType?: string;
-    isSubRecipe: Boolean;
+    subRecipe: boolean;
     createdAt?: number;
-    deactivated: Boolean;
+    deactivated: boolean;
 }
 
 export default Recipe;

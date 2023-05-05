@@ -2,7 +2,7 @@ import Job from './Job';
 import DataPointTag from './DataPointTag';
 
 interface Device {
-    uid?: string;
+    uid: string;
     name?: string;
     mac?: number;
     type?: string;
