@@ -4,7 +4,14 @@
         <Breadcrumb :heading="$t('views.recipes_view.heading')" :third="$t('views.recipes_view.link')"/>
         <div class="grid-container">
           <div v-for="recipe in gridRecipes" :key="recipe.id" class="device-card">
-            <h3>{{ recipe.name }}</h3>
+            <h3>{{ recipe.name }}</h3> 
+            <p>Recipe commands: {{ recipe.commands }}</p>
+            <p>Subrecipes: {{ recipe.subRecipes }}</p>
+            <p>Type of device: {{ recipe.deviceType }}</p>
+            <p>Is subrecipe?: {{ recipe.subRecipe }}</p>
+            <p>Is device deactivated?: {{ recipe.deactivated }}</p>
+            <button class="delete-button" @click="deleteRecipe(recipe.id)">X</button>
+            <button class="update-button" @click="showEditForm()">Edit recipe</button>         
           </div>
         </div>
         <div>
@@ -43,7 +50,13 @@
       gridRecipes: [] as Recipe[],
       newRecipe: '',
       creatingRecipe: false as boolean,
-      deviceType: DeviceTypeEnum
+      deviceType: DeviceTypeEnum,
+      selectedType: '',
+      recipeToEdit: null,
+      typeOptions: [
+        { value: 'ESP32', label: 'ESP32' },
+        { value: 'SDG_CUBE', label: 'SDG_CUBE' },
+      ],
     }),
     methods: {
       async getRecipes() {
@@ -55,6 +68,17 @@
           console.log("Error when calling getAllRecipes() service.");
         } finally {
           this.loading = false;
+        }
+      },
+      async deleteRecipe(recipeId: string) {
+        if(confirm("Are you sure you want to delete this recipe?")){
+          try {
+            await RecipeService.deleteRecipe(recipeId);
+            // If the delete request was successful, update the list of recipes in the UI
+            this.gridRecipes = this.gridRecipes.filter(recipe => recipe.id !== recipeId);
+          } catch (error) {
+            console.error('Error deleting recipe.');
+          }
         }
       },
       addRecipe() {
@@ -109,5 +133,19 @@
       border-radius: 5px;
       background-color: #f5f5f5;
       text-align: center
+    }
+    .delete-button {
+      position: static;
+      text-align: left;
+      justify-content: start;
+      align-items: start;
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 3px;
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      
     }
     </style>
