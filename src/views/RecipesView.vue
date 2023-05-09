@@ -11,7 +11,7 @@
             <p>Is subrecipe?: {{ recipe.subRecipe }}</p>
             <p>Is device deactivated?: {{ recipe.deactivated }}</p>
             <button class="delete-button" @click="deleteRecipe(recipe.id)">X</button>
-            <button class="update-button" @click="showEditForm()">Edit recipe</button>         
+            <button class="update-button">Edit recipe</button>         
           </div>
         </div>
         <div>

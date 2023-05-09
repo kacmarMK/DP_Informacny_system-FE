@@ -1,50 +1,56 @@
 <template>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-            <a class="page-link" href="#" @click="nextPrev(-1)" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-            </li>
-            <li class="page-item"><a class="page-link" @click="changePage(1)" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" @click="changePage(2)" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" @click="changePage(3)" href="#">3</a></li>
-            <li class="page-item">
-            <a class="page-link" href="#" @click="nextPrev(1)" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-            </li>
-        </ul>
-    </nav>
-</template>
-<script lang="ts">
-import { defineComponent } from "@vue/runtime-core"
-
-export default defineComponent({
+    <div class="pagination">
+      <button :disabled="currentPage === 1" @click="previousPage">Previous</button>
+      <button @click="nextPage">Next</button>
+    </div>
+  </template>
+  
+  <script>
+  export default {
     name: 'Pagination',
-    data: () => ({
-        pageNumber: 1
-    }),
-    emits: ['handlePaging'],
+    props: {
+      currentPage: {
+        type: Number,
+        required: true,
+      },
+    },
     methods: {
-        changePage(num:number){
-            this.pageNumber = num
-            this.$emit('handlePaging', {
-                page: num,
-            })
-        },
-        nextPrev(num: number){
-            let newNum = this.pageNumber + num 
-            this.pageNumber = newNum
-            this.$emit('handlePaging', {
-                page: newNum,
-            })
-        }
-    }
-})
-</script>
-<style lang="">
-    
-</style>
+      previousPage() {
+        this.$emit('page-changed', this.currentPage - 1);
+      },
+      nextPage() {
+        this.$emit('page-changed', this.currentPage + 1);
+      },
+      goToPage(pageNumber) {
+        this.$emit('page-changed', pageNumber);
+      },
+    },
+  };
+  </script>
+  
+  <style>
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
+  button.active {
+    background-color: #ccc;
+  }
+  </style>
+  

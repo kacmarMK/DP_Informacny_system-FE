@@ -88,7 +88,7 @@
         this.command.deactivated = this.deactivated;
         try{
           const response: ResponseData<Command> = await CommandService.createCommand(this.command);
-          this.command = {deactivated: false};
+          this.command = {id:"", deactivated: false};
           location.reload();
         } catch (e) {
           //TODO
