@@ -8,9 +8,9 @@
           <table>
             <thead>
               <tr>
-                <th><a href="" @click.prevent="getCommands('name', 'asc')">Name</a></th>
-                <th><a href="" @click.prevent="getCommands('deviceType', 'asc')">Device Type</a></th>
-                <th><a href="" @click.prevent="getCommands('params', 'asc')">Parameters</a></th>
+                <th><a href="" @click.prevent="getCommands('name', sortBy === 'name' ? (sortDirection === 'asc' ? 'desc' : 'asc') : 'asc', pagination.currentPage)">Name</a></th>
+                <th><a href="" @click.prevent="getCommands('deviceType', sortBy === 'deviceType' ? (sortDirection === 'asc' ? 'desc' : 'asc') : 'asc', pagination.currentPage)">Device Type</a></th>
+                <th>Parameters</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -91,10 +91,20 @@ export default defineComponent({
       async getCommands(sortBy: string, sortDirection: string, page = 1) {
         try {
           this.loading = true;
+          // Toggle sort direction if the current sorting column is clicked again
+          if (sortBy === this.sortBy) {
+                  sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+          }
+          if (sortBy === "none") {
+            sortDirection = 'none';
+          }
+
           const response = await CommandService.getAllCommandsWithPagination(page, this.perPage, sortBy, sortDirection);
           this.gridCommands = response.data;
           this.totalCommands = response.headers['x-total-count'];
+          this.sortBy = sortBy;
           this.pagination.currentPage = page;
+          this.sortDirection = sortDirection;
         } catch (error: unknown) {
           // Handle error
         } finally {
@@ -106,16 +116,7 @@ export default defineComponent({
         this.currentPage = page;
         this.getCommands(this.sortBy, this.sortDirection, page);
       },
-      // Sorting method with toggle for ascending/descending
-      async sortCommands(sortBy: string) {
-        if (this.sortBy === sortBy) {
-          this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
-        } else {
-          this.sortBy = sortBy;
-          this.sortDirection = 'asc';
-        }
-        this.getCommands(this.sortBy, this.sortDirection, this.currentPage);
-      },
+
       async deleteCommand(commandId: string) {
         if(confirm("Are you sure you want to delete this device?")){
           try {
@@ -134,8 +135,9 @@ export default defineComponent({
         this.creatingCommand = !this.creatingCommand;
       },
     },
-    mounted() {
-      this.getCommands(this.sortBy, this.sortDirection);
+    async mounted() {
+      const response = await CommandService.getAllCommandsWithPagination(1, this.perPage, 'none', 'none');
+      this.gridCommands = response.data;
     }
 })
 </script>
