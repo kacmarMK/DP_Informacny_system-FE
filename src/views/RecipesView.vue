@@ -2,18 +2,46 @@
     <MainContent>
       <div>
         <Breadcrumb :heading="$t('views.recipes_view.heading')" :third="$t('views.recipes_view.link')"/>
-        <div class="grid-container">
-          <div v-for="recipe in gridRecipes" :key="recipe.id" class="device-card">
-            <h3>{{ recipe.name }}</h3> 
-            <p>Recipe commands: {{ recipe.commands }}</p>
-            <p>Subrecipes: {{ recipe.subRecipes }}</p>
-            <p>Type of device: {{ recipe.deviceType }}</p>
-            <p>Is subrecipe?: {{ recipe.subRecipe }}</p>
-            <p>Is device deactivated?: {{ recipe.deactivated }}</p>
-            <button class="delete-button" @click="deleteRecipe(recipe.id)">X</button>
-            <button class="update-button">Edit recipe</button>         
-          </div>
+        <div class="page-container">
+        <div class="container">
+          <table>
+            <thead>
+              <tr>
+                <th><a href="" @click.prevent="getRecipes('name', sortBy === 'name' ? (sortDirection === 'asc' ? 'desc' : 'asc') : 'asc', pagination.currentPage)">Name</a></th>
+                <th><a href="" @click.prevent="getRecipes('deviceType', sortBy === 'deviceType' ? (sortDirection === 'asc' ? 'desc' : 'asc') : 'asc', pagination.currentPage)">Device Type</a></th>
+                <th><a href="" @click.prevent="getRecipes('subRecipe', sortBy === 'subRecipe' ? (sortDirection === 'asc' ? 'desc' : 'asc') : 'asc', pagination.currentPage)">Is subrecipe?</a></th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="recipe in gridRecipes" :key="recipe.id">
+                <td>{{ recipe.name }}</td>
+                <td>{{ recipe.deviceType }}</td>
+                <td>
+                  <span v-if="recipe.subRecipe" class="green-icon">✓</span>
+                  <span v-else class="red-icon">X</span>
+                </td>
+                <td>
+                  <button class="delete-button" @click="deleteRecipe(recipe.id)">Delete</button>
+                  <button class="edit-button" >Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="pagination">
+          <a v-if="pagination.currentPage > 1" @click="getRecipes(sortBy, sortDirection, pagination.currentPage - 1)">
+            Previous
+          </a>
+          <a @click="getRecipes(sortBy, sortDirection, pagination.currentPage + 1)">
+            Next
+          </a>
         </div>
+        
+        </div>
+        </div>
+        
+        <hr class="separator">
         <div>
           <button class="create-device-btn" @click="toggleRecipeCreation">
             <i class="fa fa-plus"></i> Create Recipe
@@ -47,6 +75,8 @@
     data: () => ({
       errorMessage: "" as string,
       loading: false as boolean,
+      sortBy: "none",
+      sortDirection: "none",
       gridRecipes: [] as Recipe[],
       newRecipe: '',
       creatingRecipe: false as boolean,
@@ -57,18 +87,39 @@
         { value: 'ESP32', label: 'ESP32' },
         { value: 'SDG_CUBE', label: 'SDG_CUBE' },
       ],
+      perPage: 10,
+      currentPage: 1,
+      pagination: {
+        currentPage: 1,
+        totalPages: 10,
+        pages: [] as number[]
+      },
     }),
     methods: {
-      async getRecipes() {
+      async getRecipes(sortBy: string, sortDirection: string, page = 1) {
         try {
           this.loading = true;
-          const response = await RecipeService.getAllRecipes("none", "none");
+          if (sortBy === this.sortBy) {
+                  sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+          }
+          if (sortBy === "none") {
+            sortDirection = 'none';
+          }
+          const response = await RecipeService.getAllRecipesPageable(page, this.perPage, sortBy, sortDirection);
           this.gridRecipes = response.data;
+          this.sortBy = sortBy;
+          this.pagination.currentPage = page;
+          this.sortDirection = sortDirection;
         } catch (error) {
           console.log("Error when calling getAllRecipes() service.");
         } finally {
           this.loading = false;
         }
+      },
+      onChangePage(page: number) {
+        console.log(page);
+        this.currentPage = page;
+        this.getRecipes(this.sortBy, this.sortDirection, page);
       },
       async deleteRecipe(recipeId: string) {
         if(confirm("Are you sure you want to delete this recipe?")){
@@ -88,9 +139,10 @@
         this.creatingRecipe = !this.creatingRecipe;
       },
     },
-    created() {
-      this.getRecipes();
-    },
+    async mounted() {
+      const response = await RecipeService.getAllRecipesPageable(1, this.perPage, 'none', 'none');
+      this.gridRecipes = response.data;
+    }
   })
   </script>
   
@@ -122,6 +174,49 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 5px;
     }
+    .container {
+      margin: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    th {
+      font-size: 20px;
+    }
+    th,
+    td {
+      padding: 1px 15px;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #666;
+      color: #fff;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 20px;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: 5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
     .device-card {
       display: flex;
       margin: 20px;
@@ -147,5 +242,59 @@
       border: none;
       cursor: pointer;
       
+    }
+
+    .page-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin: 20px;
+    }
+
+    .button-container {
+      flex: 0 0 auto;
+      margin-right: 20px;
+      margin-left: 50px;
+    }
+    .fa-plus {
+      margin-right: 10px;
+    }
+
+    .separator {
+      flex: 1 0 auto;
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .pagination a {
+      display: inline-block;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin: 0 5px;
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .pagination a:hover {
+      background-color: #ccc;
+    }
+    .green-icon {
+      color: green;
+      font-size: 20px;
+    }
+
+    .red-icon {
+      color: red;
+      font-size: 20px;
     }
     </style>
